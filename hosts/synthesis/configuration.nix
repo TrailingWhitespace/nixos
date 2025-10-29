@@ -21,8 +21,63 @@
     # ./users.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
+    # ./hardware-configuration.nix
+
+    inputs.impermanence.nixosModules.impermanence
   ];
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "rtsx_usb_sdmmc" ];
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  
+
+
+ 
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/NIXOS"; # Use the label you set in disko
+    fsType = "btrfs";
+    options = [ "subvol=root" "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
+  };
+
+  
+  # This runs on every boot
+  boot.initrd.postDeviceCommands = lib.mkAfter ''
+    # Mount the top-level BTRFS partition (labeled NIXOS)
+    mkdir /btrfs_tmp
+    mount -o subvolid=5 /dev/disk/by-label/NIXOS /btrfs_tmp
+
+    # Check if our 'root' subvolume exists to be snapshotted
+    if [[ -e /btrfs_tmp/root ]]; then
+        mkdir -p /btrfs_tmp/old_roots
+        timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
+        mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
+    fi
+
+    # Recursive delete function
+    delete_subvolume_recursively() {
+        IFS=$'\n'
+        for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
+            delete_subvolume_recursively "/btrfs_tmp/$i"
+        done
+        btrfs subvolume delete "$1"
+    }
+
+    # Delete roots older than 30 days
+    for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
+        delete_subvolume_recursively "$i"
+    done
+
+    # Create the new, clean 'root' subvolume for this boot
+    btrfs subvolume create /btrfs_tmp/root
+    umount /btrfs_tmp
+  '';
+
+
+
+
+
 
   nixpkgs = {
     # You can add overlays here
@@ -59,13 +114,14 @@
     
   };
 
-  # FIXME: Add the rest of your current 
+
   
 
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.devices = ["/dev/nvme0n1"];
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   networking.networkmanager.enable = true;
  

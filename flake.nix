@@ -16,7 +16,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Impermanence
+    impermanence.url = "github:nix-community/impermanence";
+  
     # Sops
     # spicetify
     # winboat
@@ -67,6 +68,12 @@
         modules = [
           # > Our main nixos configuration file <
           ./hosts/synthesis/configuration.nix
+
+        
+          inputs.disko.nixosModules.disko 
+          
+          
+          ./hosts/synthesis/disko-config.nix
         ];
       };
     };
@@ -74,9 +81,10 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      # FIXME replace with your username@hostname
+ 
       "prabhas@synthesis" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        backupFileExtension = ".hm-backup";
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
