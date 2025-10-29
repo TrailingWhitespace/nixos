@@ -1,0 +1,3 @@
+{
+  description = "My NixOS configuration";
+}
