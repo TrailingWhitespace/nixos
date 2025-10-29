@@ -59,7 +59,13 @@
     
   };
 
-  # FIXME: Add the rest of your current configuration
+  # FIXME: Add the rest of your current 
+  
+
+  # Bootloader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.devices = ["/dev/nvme0n1"];
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.networkmanager.enable = true;
  
@@ -70,7 +76,7 @@
     # FIXME: Replace with your username
     prabhas = {
       isNormalUser = true;
-      description = "Me ig."
+      description = "Me ig.";
       extraGroups = ["wheel" "networkmanager"];
     };
   };
