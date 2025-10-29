@@ -130,9 +130,15 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
+   environment.systemPackages = with pkgs; [
+git  firefox 
+vscode kitty ];
+
+
+fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+
   users.users = {
-    # FIXME: Replace with your username
+
     prabhas = {
       isNormalUser = true;
       description = "Me ig.";
