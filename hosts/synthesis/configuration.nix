@@ -115,7 +115,6 @@
   };
 
 
-  
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -126,6 +125,10 @@
   networking.networkmanager.enable = true;
  
   networking.hostName = "synthesis";
+
+  programs.hyprland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {

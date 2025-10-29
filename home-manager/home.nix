@@ -62,6 +62,16 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
+  home.persistence."/persist/home/prabhas" = {
+
+    allowOther = true; 
+
+    # directories = [ ];
+
+    # files = [ ];
+  };
+}
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.05";
 }
