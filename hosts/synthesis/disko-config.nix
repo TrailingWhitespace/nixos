@@ -12,7 +12,7 @@
             content = {
               type = "filesystem";
               format = "vfat";
-              mountpoint = "/boot/efi";
+              mountpoint = "/boot";
               mountOptions = [ "defaults" "umask=0077" ]; 
             };
           };
