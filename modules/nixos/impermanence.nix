@@ -31,7 +31,7 @@
     umount /btrfs_tmp
   '';
 
-  # Use /nix/persist as the persistence root, matching Disko's mountpoint
+  
   environment.persistence."/persist" = {
     hideMounts = true;
     directories = [
@@ -44,11 +44,14 @@
       # Root user's home
       "/root"
 
+      # whole /etc
+      "/etc"
+
       # Specific config files/dirs from /etc
-      "/etc/NetworkManager/system-connections"
+      # "/etc/NetworkManager/system-connections"
     ];
     files = [
-        "/etc/machine-id"
+        # "/etc/machine-id"
     ];
   };
 }
