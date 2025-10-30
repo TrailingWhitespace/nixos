@@ -27,6 +27,7 @@
               extraArgs = [ "-L" "NIXOS" "-f"]; 
               subvolumes = {
                 "/root" = {
+                  mountpoint = "/";
                   mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
                 };
 		"/home" = {
@@ -43,6 +44,7 @@
                 };
                 "/swap" = {
                   mountpoint = "/.swapvol";
+                    mountOptions = ["subvol=swap" "noatime" "nodatacow" "compress=no"];
                   swap.swapfile.size = "16G";
                 };
               };
