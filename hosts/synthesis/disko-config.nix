@@ -7,8 +7,10 @@
         type = "gpt";
         partitions = {
           ESP = {
+            priority = 1;
             type = "EF00";
-            size = "512M";
+            start = "1M";
+            end = "512M";
             content = {
               type = "filesystem";
               format = "vfat";
@@ -21,7 +23,7 @@
             size = "100%";
             content = {
               type = "btrfs";
-              extraArgs = [ "-L" "NIXOS" ]; 
+              extraArgs = [ "-L" "NIXOS" "-f"]; 
               subvolumes = {
                 "/root" = {
                   mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
