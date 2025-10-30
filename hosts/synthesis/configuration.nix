@@ -21,22 +21,19 @@
     # ./users.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
-    # ./hardware-configuration.nix
+    ./hardware-configuration.nix
 
     inputs.impermanence.nixosModules.impermanence
   ];
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "rtsx_usb_sdmmc" ];
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  
   boot.kernelPackages = pkgs.linuxPackages_zen;
   
 
 
  
   fileSystems."/" = {
-    device = "/dev/disk/by-label/NIXOS"; # Use the label you set in disko
+    device = "/dev/disk/by-label/NIXOS"; 
     fsType = "btrfs";
     options = [ "subvol=root" "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
   };
