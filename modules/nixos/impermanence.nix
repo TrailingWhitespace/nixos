@@ -1,4 +1,6 @@
 {lib, ...}: {
+   
+   /*
    # This runs on every boot
   boot.initrd.postDeviceCommands = lib.mkAfter ''
     # Mount the top-level BTRFS partition (labeled NIXOS)
@@ -30,7 +32,7 @@
     btrfs subvolume create /btrfs_tmp/root
     umount /btrfs_tmp
   '';
-
+*/
   
   environment.persistence."/persist" = {
     hideMounts = true;
