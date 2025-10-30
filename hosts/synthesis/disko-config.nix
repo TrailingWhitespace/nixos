@@ -29,19 +29,19 @@
               subvolumes = {
                 "/root" = {
                   mountpoint = "/";
-                  mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
+                  mountOptions = [ "subvol=root" "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
                 };
 		"/home" = {
 		  mountpoint = "/home";
-		  mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
+		  mountOptions = [ "subvol=home" "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
 		};
                 "/persist" = {
                   mountpoint = "/persist";
-                  mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
+                  mountOptions = [ "subvol=persist" "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
                 };
                 "/nix" = {
                   mountpoint = "/nix";
-                  mountOptions = [ "noatime" "noacl" "compress=zstd" "ssd" "space_cache=v2" ];
+                  mountOptions = [ "subvol=nix" "noatime" "noacl" "compress=zstd" "ssd" "space_cache=v2" ];
                 };
                 "/swap" = {
                   mountpoint = "/.swapvol";
