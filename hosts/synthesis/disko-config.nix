@@ -14,6 +14,7 @@
             end = "1G";
             content = {
               type = "filesystem";
+              extraArgs = [ "-L" "BOOT"]; 
               format = "vfat";
               mountpoint = "/boot";
               mountOptions = [ "defaults" "umask=0077" ]; 
