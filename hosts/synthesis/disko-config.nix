@@ -8,9 +8,10 @@
         partitions = {
           ESP = {
             priority = 1;
+	    name = "boot";
             type = "EF00";
             start = "1M";
-            end = "512M";
+            end = "1G";
             content = {
               type = "filesystem";
               format = "vfat";
