@@ -14,7 +14,7 @@
             end = "1G";
             content = {
               type = "filesystem";
-              extraArgs = [ "-L" "BOOT"]; 
+              extraArgs = [ "-n" "BOOT"]; 
               format = "vfat";
               mountpoint = "/boot";
               mountOptions = [ "defaults" "umask=0077" ]; 
@@ -29,23 +29,23 @@
               subvolumes = {
                 "/root" = {
                   mountpoint = "/";
-                  mountOptions = [ "subvol=root" "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
+                  mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
                 };
 		"/home" = {
 		  mountpoint = "/home";
-		  mountOptions = [ "subvol=home" "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
+		  mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
 		};
                 "/persist" = {
                   mountpoint = "/persist";
-                  mountOptions = [ "subvol=persist" "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
+                  mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
                 };
                 "/nix" = {
                   mountpoint = "/nix";
-                  mountOptions = [ "subvol=nix" "noatime" "noacl" "compress=zstd" "ssd" "space_cache=v2" ];
+                  mountOptions = [ "noatime" "noacl" "compress=zstd" "ssd" "space_cache=v2" ];
                 };
                 "/swap" = {
                   mountpoint = "/.swapvol";
-                    mountOptions = ["subvol=swap" "noatime" "nodatacow" "compress=no"];
+                    mountOptions = [ "noatime" "nodatacow" "compress=no"];
                   swap.swapfile.size = "16G";
                 };
               };
@@ -55,8 +55,4 @@
       };
     };
   };
-  fileSystems."/persist" = {
-  neededForBoot = true;
-};
-  
 }

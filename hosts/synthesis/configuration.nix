@@ -36,7 +36,9 @@
 
 
   
- 
+fileSystems."/persist" = {
+  neededForBoot = true;
+}; 
 
 
 
