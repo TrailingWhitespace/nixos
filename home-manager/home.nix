@@ -17,6 +17,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+    inputs.noctalia.homeModules.default
   ];
 
   nixpkgs = {
@@ -50,14 +51,16 @@
     homeDirectory = "/home/prabhas";
   };
 
-  home.packages = with pkgs; [unzip
-  
-  inputs.caelestia-shell.packages.x86_64-linux.default
+  home.packages = with pkgs; [
+    unzip
+
+    inputs.caelestia-shell.packages.x86_64-linux.default
   ];
 
   programs.home-manager.enable = true;
 
   programs.dankMaterialShell.enable = true;
+  programs.noctalia-shell.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

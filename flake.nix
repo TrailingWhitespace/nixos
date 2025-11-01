@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager"; # "github:nix-community/home-manager/release-25.05"; # upgrade to 25.11 
+      url = "github:nix-community/home-manager"; # "github:nix-community/home-manager/release-25.05"; # upgrade to 25.11
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -23,20 +23,29 @@
     };
 
     dgop = {
-  url = "github:AvengeMedia/dgop";
-  inputs.nixpkgs.follows = "nixpkgs";
-};
-dms-cli = {
-  url = "github:AvengeMedia/danklinux";
-  inputs.nixpkgs.follows = "nixpkgs";
-};
-dankMaterialShell = {
-  url = "github:AvengeMedia/DankMaterialShell";
-  inputs.nixpkgs.follows = "nixpkgs";
-  inputs.dgop.follows = "dgop";
-  inputs.dms-cli.follows = "dms-cli";
-};
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms-cli = {
+      url = "github:AvengeMedia/danklinux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dgop.follows = "dgop";
+      inputs.dms-cli.follows = "dms-cli";
+    };
 
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell"; # Use same quickshell version
+    };
     # Sops
     # spicetify
     # winboat
@@ -98,7 +107,7 @@ dankMaterialShell = {
 
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home.nix 
+          ./home-manager/home.nix
         ];
       };
     };
