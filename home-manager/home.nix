@@ -66,6 +66,7 @@
     slurp
     bibata-cursors
     nerd-fonts.jetbrains-mono
+    winboat
   ];
 
  home.pointerCursor = {

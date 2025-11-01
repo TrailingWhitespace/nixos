@@ -93,7 +93,7 @@
     prabhas = {
       isNormalUser = true;
       description = "Me ig.";
-      extraGroups = ["wheel" "networkmanager"];
+      extraGroups = ["wheel" "networkmanager" "docker"];
       initialPassword = "temp123";
     };
   };
@@ -115,6 +115,14 @@ fonts = {
     };
   };
 };
+
+virtualisation.docker = {
+  enable = true;
+
+ extraPackages = [ pkgs.docker-buildx ];
+};
+virtualisation.docker.storageDriver = "btrfs";
+
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
