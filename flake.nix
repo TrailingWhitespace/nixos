@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.05"; # upgrade to 25.11 
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -20,7 +20,6 @@
     # Sops
     # spicetify
     # winboat
-    # quickshell / dms
   };
 
   outputs = {
@@ -79,9 +78,7 @@
 
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home.nix
-
-          inputs.impermanence.homeManagerModules.impermanence
+          ./home-manager/home.nix 
         ];
       };
     };
