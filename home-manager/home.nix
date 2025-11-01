@@ -53,9 +53,17 @@
   home.file.".config/hypr" = {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/config/hypr";
   };
+  home.file.".config/flameshot.ini" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/config/flameshot.ini";
+  };
 
   home.packages = with pkgs; [
     unzip
+    wl-clipboard
+    nautilus
+    (flameshot.override { enableWlrSupport = true; })
+    grim
+    slurp
   ];
 
   programs.home-manager.enable = true;
