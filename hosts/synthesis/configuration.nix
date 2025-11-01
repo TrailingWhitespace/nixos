@@ -79,6 +79,8 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
+  time.timeZone = "Asia/Kolkata";
+
   environment.systemPackages = with pkgs; [
     git
     firefox
@@ -86,7 +88,6 @@
     kitty
   ];
 
-  fonts.packages = [pkgs.nerd-fonts.jetbrains-mono];
 
   users.users = {
     prabhas = {
@@ -96,6 +97,24 @@
       initialPassword = "temp123";
     };
   };
+
+
+fonts = {
+  enableDefaultPackages = true;
+  packages = with pkgs; [ 
+    ubuntu-classic
+    liberation_ttf
+    nerd-fonts.jetbrains-mono
+  ];
+
+  fontconfig = {
+    defaultFonts = {
+      serif = [  "Liberation Serif"  ];
+      sansSerif = [ "Ubuntu" ];
+      monospace = [ "JetBrainsMono NF" "Ubuntu Mono" ];
+    };
+  };
+};
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
