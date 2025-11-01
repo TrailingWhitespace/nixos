@@ -2,11 +2,11 @@
   description = "My NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05"; # upgrade to 25.11 on release
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # "github:nixos/nixpkgs/nixos-25.05"; # upgrade to 25.11 on release
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05"; # upgrade to 25.11 
+      url = "github:nix-community/home-manager"; # "github:nix-community/home-manager/release-25.05"; # upgrade to 25.11 
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -16,6 +16,26 @@
     };
 
     impermanence.url = "github:nix-community/impermanence";
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dgop = {
+  url = "github:AvengeMedia/dgop";
+  inputs.nixpkgs.follows = "nixpkgs";
+};
+dms-cli = {
+  url = "github:AvengeMedia/danklinux";
+  inputs.nixpkgs.follows = "nixpkgs";
+};
+dankMaterialShell = {
+  url = "github:AvengeMedia/DankMaterialShell";
+  inputs.nixpkgs.follows = "nixpkgs";
+  inputs.dgop.follows = "dgop";
+  inputs.dms-cli.follows = "dms-cli";
+};
 
     # Sops
     # spicetify
