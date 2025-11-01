@@ -52,8 +52,6 @@
 
   home.packages = with pkgs; [
     unzip
-
-    inputs.caelestia-shell.packages.x86_64-linux.default
   ];
 
   programs.home-manager.enable = true;
