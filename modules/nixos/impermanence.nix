@@ -36,7 +36,6 @@
   environment.persistence."/persist" = {
     enable = true;
     hideMounts = true;
-    allowOther = true;
     directories = [
       # Standard state directories
       # "/var/log"
