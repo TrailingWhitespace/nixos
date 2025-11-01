@@ -50,6 +50,10 @@
     homeDirectory = "/home/prabhas";
   };
 
+  home.file.".config/hypr" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/config/hypr";
+  };
+
   home.packages = with pkgs; [
     unzip
   ];
