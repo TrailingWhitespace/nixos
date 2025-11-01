@@ -1,5 +1,5 @@
 {lib, ...}: {
-   /* 
+
    # This runs on every boot
   boot.initrd.postDeviceCommands = lib.mkAfter ''
     # Mount the top-level BTRFS partition (labeled NIXOS)
@@ -31,36 +31,31 @@
     btrfs subvolume create /btrfs_tmp/root
     umount /btrfs_tmp
   '';
-*/
+
   
   environment.persistence."/persist" = {
     enable = true;
     hideMounts = true;
     directories = [
-      # Standard state directories
-      # "/var/log"
-      # "/var/lib"
-      # "/var/spool"
-      # "/srv"
-      
-      # Root user's home
-      # "/root"
 
-      # whole /etc
-      # "/etc"
-
-      # Specific config files/dirs from /etc
-      # "/etc/NetworkManager/system-connections"
-
-      "/etc/nixos"
       "/var/log"
-      "/var/lib/bluetooth"
-      "/var/lib/nixos"
-      "/var/lib/systemd/coredump"
-      "/etc/NetworkManager/system-connections"
+      "/var/lib"
+      "/var/spool"
+      "/var/db"
+
+
+      "/root"
+      "/srv"
+      
+      "/etc"
+      
+      # "/etc/nixos"
+      # "/etc/ssh"
+      # "/etc/NetworkManager/system-connections"
     ];
     files = [
-        "/etc/machine-id"
+      # "/etc/machine-id"
+      # "/etc/shadow"
     ];
   };
 }
