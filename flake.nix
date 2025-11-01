@@ -2,12 +2,11 @@
   description = "My NixOS configuration";
 
   inputs = {
-   
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05"; # upgrade to 25.11 on release
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -17,15 +16,11 @@
     };
 
     impermanence.url = "github:nix-community/impermanence";
-  
+
     # Sops
     # spicetify
     # winboat
     # quickshell / dms
-
-  
-    
- 
   };
 
   outputs = {
@@ -36,7 +31,7 @@
   } @ inputs: let
     inherit (self) outputs;
     # Supported systems for your flake packages, shell, etc.
-    systems = [  
+    systems = [
       "x86_64-linux"
     ];
     # This is a function that generates an attribute by calling a function you
@@ -62,17 +57,14 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-   
       synthesis = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
           ./hosts/synthesis/configuration.nix
 
-        
-          inputs.disko.nixosModules.disko 
-          
-          
+          inputs.disko.nixosModules.disko
+
           ./hosts/synthesis/disko-config.nix
         ];
       };
@@ -81,11 +73,10 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
- 
       "prabhas@synthesis" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        backupFileExtension = ".hm-backup";
         extraSpecialArgs = {inherit inputs outputs;};
+
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix
@@ -95,6 +86,4 @@
       };
     };
   };
-
-  
 }

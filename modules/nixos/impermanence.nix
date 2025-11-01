@@ -1,6 +1,5 @@
 {lib, ...}: {
-
-   # This runs on every boot
+  # This runs on every boot
   boot.initrd.postDeviceCommands = lib.mkAfter ''
     # Mount the top-level BTRFS partition (labeled NIXOS)
     mkdir /btrfs_tmp
@@ -32,23 +31,20 @@
     umount /btrfs_tmp
   '';
 
-  
   environment.persistence."/persist" = {
     enable = true;
     hideMounts = true;
     directories = [
-
       "/var/log"
       "/var/lib"
       "/var/spool"
       "/var/db"
 
-
       "/root"
       "/srv"
-      
+
       "/etc"
-      
+
       # "/etc/nixos"
       # "/etc/ssh"
       # "/etc/NetworkManager/system-connections"

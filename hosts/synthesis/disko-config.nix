@@ -8,16 +8,16 @@
         partitions = {
           ESP = {
             priority = 1;
-	    name = "boot";
+            name = "boot";
             type = "EF00";
             start = "1M";
             end = "1G";
             content = {
               type = "filesystem";
-              extraArgs = [ "-n" "BOOT"]; 
+              extraArgs = ["-n" "BOOT"];
               format = "vfat";
               mountpoint = "/boot";
-              mountOptions = [ "defaults" "umask=0077" ]; 
+              mountOptions = ["defaults" "umask=0077"];
             };
           };
           root = {
@@ -25,27 +25,27 @@
             size = "100%";
             content = {
               type = "btrfs";
-              extraArgs = [ "-L" "NIXOS" "-f"]; 
+              extraArgs = ["-L" "NIXOS" "-f"];
               subvolumes = {
                 "/root" = {
                   mountpoint = "/";
-                  mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
+                  mountOptions = ["noatime" "compress=zstd" "ssd" "space_cache=v2"];
                 };
-		"/home" = {
-		  mountpoint = "/home";
-		  mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
-		};
+                "/home" = {
+                  mountpoint = "/home";
+                  mountOptions = ["noatime" "compress=zstd" "ssd" "space_cache=v2"];
+                };
                 "/persist" = {
                   mountpoint = "/persist";
-                  mountOptions = [ "noatime" "compress=zstd" "ssd" "space_cache=v2" ];
+                  mountOptions = ["noatime" "compress=zstd" "ssd" "space_cache=v2"];
                 };
                 "/nix" = {
                   mountpoint = "/nix";
-                  mountOptions = [ "noatime" "noacl" "compress=zstd" "ssd" "space_cache=v2" ];
+                  mountOptions = ["noatime" "noacl" "compress=zstd" "ssd" "space_cache=v2"];
                 };
                 "/swap" = {
                   mountpoint = "/.swapvol";
-                    mountOptions = [ "noatime" "nodatacow" "compress=no"];
+                  mountOptions = ["noatime" "nodatacow" "compress=no"];
                   swap.swapfile.size = "16G";
                 };
               };

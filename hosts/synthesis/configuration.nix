@@ -1,5 +1,3 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
   outputs,
@@ -8,10 +6,7 @@
   pkgs,
   ...
 }: {
-  # You can import other NixOS modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
     outputs.nixosModules.impermanence
 
     # Or modules from other flakes (such as nixos-hardware):
@@ -27,23 +22,11 @@
     inputs.impermanence.nixosModules.impermanence
   ];
 
-  
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  
 
-
- 
-
-
-  
-fileSystems."/persist" = {
-  neededForBoot = true;
-}; 
-
-
-
-
-
+  fileSystems."/persist" = {
+    neededForBoot = true;
+  };
 
   nixpkgs = {
     # You can add overlays here
@@ -77,10 +60,7 @@ fileSystems."/persist" = {
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
     };
-    
   };
-
-
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -91,24 +71,24 @@ fileSystems."/persist" = {
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiInstallAsRemovable = true;
 
-
   networking.networkmanager.enable = true;
- 
+
   networking.hostName = "synthesis";
 
   programs.hyprland.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
-   environment.systemPackages = with pkgs; [
-git  firefox 
-vscode kitty ];
+  environment.systemPackages = with pkgs; [
+    git
+    firefox
+    vscode
+    kitty
+  ];
 
-
-fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+  fonts.packages = [pkgs.nerd-fonts.jetbrains-mono];
 
   users.users = {
-
     prabhas = {
       isNormalUser = true;
       description = "Me ig.";
@@ -116,7 +96,6 @@ fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
       initialPassword = "temp123";
     };
   };
-
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
