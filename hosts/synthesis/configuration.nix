@@ -113,7 +113,7 @@ fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
       isNormalUser = true;
       description = "Me ig.";
       extraGroups = ["wheel" "networkmanager"];
-      initialPassword = "temp123";
+      # initialPassword = "temp123";
     };
   };
 

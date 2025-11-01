@@ -34,25 +34,34 @@
 
   
   environment.persistence."/persist" = {
+    enable = true;
     hideMounts = true;
+    allowOther = true;
     directories = [
       # Standard state directories
-      "/var/log"
-      "/var/lib"
-      "/var/spool"
-      "/srv"
+      # "/var/log"
+      # "/var/lib"
+      # "/var/spool"
+      # "/srv"
       
       # Root user's home
-      "/root"
+      # "/root"
 
       # whole /etc
-      "/etc"
+      # "/etc"
 
       # Specific config files/dirs from /etc
       # "/etc/NetworkManager/system-connections"
+
+      "/etc/nixos"
+      "/var/log"
+      "/var/lib/bluetooth"
+      "/var/lib/nixos"
+      "/var/lib/systemd/coredump"
+      "/etc/NetworkManager/system-connections"
     ];
     files = [
-        # "/etc/machine-id"
+        "/etc/machine-id"
     ];
   };
 }
