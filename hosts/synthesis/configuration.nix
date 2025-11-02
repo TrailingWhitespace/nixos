@@ -88,7 +88,6 @@
     kitty
   ];
 
-
   users.users = {
     prabhas = {
       isNormalUser = true;
@@ -98,31 +97,57 @@
     };
   };
 
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      ubuntu-classic
+      liberation_ttf
+      nerd-fonts.jetbrains-mono
+    ];
 
-fonts = {
-  enableDefaultPackages = true;
-  packages = with pkgs; [ 
-    ubuntu-classic
-    liberation_ttf
-    nerd-fonts.jetbrains-mono
-  ];
-
-  fontconfig = {
-    defaultFonts = {
-      serif = [  "Liberation Serif"  ];
-      sansSerif = [ "Ubuntu" ];
-      monospace = [ "JetBrainsMono NF" "Ubuntu Mono" ];
+    fontconfig = {
+      defaultFonts = {
+        serif = ["Liberation Serif"];
+        sansSerif = ["Ubuntu"];
+        monospace = ["JetBrainsMono NF" "Ubuntu Mono"];
+      };
     };
   };
-};
 
-virtualisation.docker = {
-  enable = true;
+  virtualisation.docker = {
+    enable = true;
 
- extraPackages = [ pkgs.docker-buildx ];
-};
-virtualisation.docker.storageDriver = "btrfs";
+    extraPackages = [pkgs.docker-buildx];
+  };
+  virtualisation.docker.storageDriver = "btrfs";
 
+  boot = {
+    kernelParams = [
+      "quiet"
+      "splash"
+      "mem_sleep_default=deep"
+
+      "resume_offset=533760"
+      # ^^^ don't use filefrag on btrfs! (thats the wrong offset)
+      # btrfs inspect-internal map-swapfile -r /.swapvol/swapfile
+    ];
+
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    loader.timeout = 5;
+    supportedFilesystems = ["btrfs" "exfat"];
+  };
+
+  swapDevices = [
+    {
+      device = "/.swapvol/swapfile";
+      size = 16384; # in MB (16G)
+    }
+  ];
+
+  boot.resumeDevice = "/dev/disk/by-uuid/301e26ea-dacc-4fbc-814f-653ec5be11b8";
+  # ^^^ UUID of /dev/nvme0n1p2 (btrfs-root/root) from 'lsblk -f'
+  powerManagement.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
