@@ -10,6 +10,7 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
+    outputs.homeManagerModules.config_symlinks
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -48,13 +49,6 @@
   home = {
     username = "prabhas";
     homeDirectory = "/home/prabhas";
-  };
-
-  home.file.".config/hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/config/hypr";
-  };
-  home.file.".config/flameshot.ini" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/config/flameshot.ini";
   };
 
   home.packages = with pkgs; [

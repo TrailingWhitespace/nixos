@@ -3,4 +3,5 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+  config_symlinks = import ./config_symlinks.nix;
 }
