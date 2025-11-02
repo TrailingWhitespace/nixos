@@ -221,7 +221,6 @@
     };
   };
 
-
   users.defaultUserShell = pkgs.zsh;
 
   security.rtkit.enable = true;

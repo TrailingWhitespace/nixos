@@ -1,15 +1,12 @@
 {
   config,
   lib,
-  pkgs, 
+  pkgs,
   ...
 }: {
-
- 
   home.packages = with pkgs; [
-    eza 
-    zoxide 
-    
+    eza
+    zoxide
   ];
 
   programs.zsh = {
@@ -21,17 +18,17 @@
     oh-my-zsh = {
       enable = true;
       theme = "agnoster";
-      plugins = [ "zoxide" "git" "z" "sudo" "colored-man-pages" ];
+      plugins = ["zoxide" "git" "z" "sudo" "colored-man-pages"];
     };
 
     initContent = ''
-  
+
       HISTSIZE=50000
       SAVEHIST=10000
       setopt histignoredups sharehistory
 
- 
-  
+
+
       alias ns="sudo nixos-rebuild switch --flake ~/nixos#synthesis"
       alias hm="home-manager switch --flake ~/nixos#prabhas@synthesis"
       alias flakeupdate="nix flake update ~/nixos"
@@ -42,10 +39,10 @@
       # A slightly better 'ls -a' alternative
       alias lla="eza --long --all --color=always --icons=always --no-user"
 
-   
+
       alias emptytrash="rm -rf ~/.local/share/Trash/files/* && rm -rf ~/.local/share/Trash/info/*"
 
-  
+
       # Better TAB completion (already solid)
       zstyle ':completion:*' menu select
       setopt AUTO_MENU
@@ -55,5 +52,4 @@
   };
 
   programs.starship.enable = true;
-
 }
