@@ -12,6 +12,8 @@
     # outputs.homeManagerModules.example
     outputs.homeManagerModules.config_symlinks
     outputs.homeManagerModules.zsh
+    outputs.homeManagerModules.fish
+    outputs.homeManagerModules.kitty
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
@@ -63,6 +65,10 @@
     winboat
     btrfs-progs
     kdePackages.kate
+    fastfetch
+    microfetch
+    nitch
+    nerdfetch
   ];
 
   home.pointerCursor = {
