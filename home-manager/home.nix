@@ -62,6 +62,7 @@
     nerd-fonts.jetbrains-mono
     winboat
     btrfs-progs
+    kdePackages.kate
   ];
 
   home.pointerCursor = {

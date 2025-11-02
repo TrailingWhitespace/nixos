@@ -13,5 +13,9 @@ in {
     ".config/flameshot.ini" = {
       source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/nixos/config/flameshot.ini";
     };
+
+    ".config/starship.toml" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/nixos/config/starship.toml";
+    };
   };
 }
