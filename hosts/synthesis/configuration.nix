@@ -127,6 +127,7 @@
       "splash"
       "mem_sleep_default=deep"
 
+      # "resume=UUID=301e26ea-dacc-4fbc-814f-653ec5be11b8"
       "resume_offset=533760"
       # ^^^ don't use filefrag on btrfs! (thats the wrong offset)
       # btrfs inspect-internal map-swapfile -r /.swapvol/swapfile
