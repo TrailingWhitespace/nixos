@@ -41,6 +41,8 @@
 
     # Sops
     # spicetify
+
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
@@ -82,10 +84,11 @@
         modules = [
           # > Our main nixos configuration file <
           ./hosts/synthesis/configuration.nix
+          ./hosts/synthesis/disko-config.nix
 
           inputs.disko.nixosModules.disko
-
-          ./hosts/synthesis/disko-config.nix
+          inputs.stylix.nixosModules.stylix
+          
         ];
       };
     };
