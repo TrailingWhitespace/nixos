@@ -168,6 +168,68 @@
     };
   };
 
+  hardware.graphics = {
+    # hardware.opengl
+    enable = true;
+
+    extraPackages = [
+      pkgs.intel-media-driver
+      pkgs.libva
+      pkgs.libva-utils
+    ];
+  };
+
+  services.blueman.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = true;
+      };
+    };
+  };
+
+  services.thermald.enable = true;
+  services.tlp = {
+    enable = true;
+
+    settings = {
+      # CPU governors
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "ondemand"; # Balanced mode
+
+      # Energy performance policy
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+
+      # CPU min/max performance (%)
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 60; # Balanced for battery
+
+      # Battery charge thresholds (helps long-term health)
+      START_CHARGE_THRESH_BAT0 = 40;
+      STOP_CHARGE_THRESH_BAT0 = 80;
+
+      # Optional extra savings
+      USB_AUTOSUSPEND = 1; # Enable USB suspend on battery
+      DISK_IDLE_SECS_ON_BAT = 2; # Spin down disks quickly
+      WIFI_PWR_ON_BAT = "on"; # Wi-Fi power save enabled
+    };
+  };
+
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
 }
