@@ -5,4 +5,5 @@
   # my-module = import ./my-module.nix;
   config_symlinks = import ./config_symlinks.nix;
   zsh = import ./zsh.nix;
+  fish = import ./fish.nix;
 }
