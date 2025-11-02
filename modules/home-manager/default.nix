@@ -7,7 +7,4 @@
   zsh = import ./zsh.nix;
   fish = import ./fish.nix;
   kitty = import ./kitty.nix;
-
-  
-
 }

@@ -65,6 +65,10 @@
     winboat
     btrfs-progs
     kdePackages.kate
+    fastfetch
+    microfetch
+    nitch
+    nerdfetch
   ];
 
   home.pointerCursor = {

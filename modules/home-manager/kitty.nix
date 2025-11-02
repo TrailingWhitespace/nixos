@@ -24,6 +24,8 @@
       open_url_with = "default";
       allow_remote_control = "yes";
       listen_on = "unix:/tmp/mykitty";
+      background_opacity = "0.5";
+      background_blur = 5;
     };
   };
 }
