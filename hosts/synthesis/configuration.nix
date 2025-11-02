@@ -53,12 +53,27 @@
     };
   };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
+  # nix = let
+  #   flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+  # in {
+  #   settings = {
+  #     # Enable flakes and new 'nix' command
+  #     experimental-features = "nix-command flakes";
+  #   };
+  # };
+
+  nix = {
     settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
+      experimental-features = ["nix-command" "flakes"];
+    };
+
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 5d";
+    };
+
+    optimise = {
+      automatic = true;
     };
   };
 
@@ -116,7 +131,6 @@
 
   virtualisation.docker = {
     enable = true;
-
     extraPackages = [pkgs.docker-buildx];
   };
   virtualisation.docker.storageDriver = "btrfs";

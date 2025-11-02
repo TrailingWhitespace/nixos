@@ -7,11 +7,11 @@
 in {
   home.file = {
     ".config/hypr" = {
-      source = lib.file.mkOutOfStoreSymlink "${homeDirectory}/nixos/config/hypr";
+      source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/nixos/config/hypr";
     };
 
     ".config/flameshot.ini" = {
-      source = lib.file.mkOutOfStoreSymlink "${homeDirectory}/nixos/config/flameshot.ini";
+      source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/nixos/config/flameshot.ini";
     };
   };
 }

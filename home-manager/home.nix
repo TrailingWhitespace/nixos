@@ -61,6 +61,7 @@
     bibata-cursors
     nerd-fonts.jetbrains-mono
     winboat
+    btrfs-progs
   ];
 
   home.pointerCursor = {
