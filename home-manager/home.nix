@@ -13,6 +13,7 @@
     outputs.homeManagerModules.config_symlinks
     outputs.homeManagerModules.zsh
     outputs.homeManagerModules.fish
+    outputs.homeManagerModules.kitty
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
