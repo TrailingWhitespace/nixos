@@ -53,7 +53,6 @@
     };
   };
 
-
   nix = {
     settings = {
       experimental-features = ["nix-command" "flakes"];
@@ -155,6 +154,19 @@
   boot.resumeDevice = "/dev/disk/by-uuid/301e26ea-dacc-4fbc-814f-653ec5be11b8";
   # ^^^ UUID of /dev/nvme0n1p2 (btrfs-root/root) from 'lsblk -f'
   powerManagement.enable = true;
+
+  services.logind.settings = {
+    Login = {
+      SleepOperation = "suspend";
+
+      IdleAction = "suspend";
+      IdleActionSec = "5min";
+
+      HandleLidSwitch = "suspend";
+      HandleLidSwitchExternalPower = "suspend";
+      HandleLidSwitchDocked = "suspend";
+    };
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
