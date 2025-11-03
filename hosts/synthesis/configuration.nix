@@ -95,7 +95,7 @@
   users.users = {
     prabhas = {
       isNormalUser = true;
-      description = "Me ig.";
+      description = "Prabhas";
       extraGroups = ["wheel" "networkmanager" "docker"];
       initialPassword = "temp123";
     };

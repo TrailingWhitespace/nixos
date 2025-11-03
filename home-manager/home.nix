@@ -71,6 +71,9 @@
     nitch
     nerdfetch
     hyprmon
+    xfce.thunar
+    kdePackages.dolphin
+    qbittorrent-enhanced
   ];
 
   home.pointerCursor = {
