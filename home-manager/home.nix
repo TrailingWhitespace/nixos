@@ -70,6 +70,7 @@
     microfetch
     nitch
     nerdfetch
+    hyprmon
   ];
 
   home.pointerCursor = {
