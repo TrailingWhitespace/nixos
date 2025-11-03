@@ -23,7 +23,6 @@
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
     dms-cli = {
       url = "github:AvengeMedia/danklinux";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,6 +33,8 @@
       inputs.dgop.follows = "dgop";
       inputs.dms-cli.follows = "dms-cli";
     };
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     # Sops
     # spicetify
@@ -100,6 +101,7 @@
           ./home-manager/home.nix
 
           inputs.stylix.homeModules.stylix
+          inputs.spicetify-nix.homeManagerModules.spicetify
         ];
       };
     };

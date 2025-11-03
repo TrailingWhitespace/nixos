@@ -5,7 +5,9 @@
   config,
   pkgs,
   ...
-}: {
+}: let 
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+  in {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -76,7 +78,9 @@
     qbittorrent-enhanced
     yazi
     tree
-    python314
+    python313
+    python313Packages.pip
+    trashy
   ];
 
   home.pointerCursor = {
@@ -108,6 +112,17 @@
   programs.home-manager.enable = true;
 
   programs.dankMaterialShell.enable = true;
+
+   programs.spicetify = {
+     enable = true;
+     enabledExtensions = with spicePkgs.extensions; [
+       adblockify
+       hidePodcasts
+       shuffle 
+     ];
+     theme = spicePkgs.themes.catppuccin;
+     colorScheme = "mocha";
+   };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
