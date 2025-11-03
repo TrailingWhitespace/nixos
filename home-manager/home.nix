@@ -74,6 +74,8 @@
     xfce.thunar
     kdePackages.dolphin
     qbittorrent-enhanced
+    yazi
+    tree
   ];
 
   home.pointerCursor = {
