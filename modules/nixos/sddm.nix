@@ -5,9 +5,7 @@
   config,
   ...
 }: let
- 
-  
-  sddm-astronaut = pkgs.sddm-astronaut.override {  
+  sddm-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "pixel_sakura";
   };
 in {
@@ -17,7 +15,7 @@ in {
       extraPackages = [sddm-astronaut];
       enable = true;
       wayland.enable = true;
-      theme = "sddm-astronaut-theme"; 
+      theme = "sddm-astronaut-theme";
     };
   };
 

@@ -1,7 +1,7 @@
 # Kitty is a fast, featureful, GPU based terminal emulator
 {
   config,
-  lib, 
+  lib,
   ...
 }: let
   homeDirectory = config.home.homeDirectory;
@@ -29,9 +29,9 @@ in {
       open_url_with = "default";
       allow_remote_control = "yes";
       listen_on = "unix:/tmp/mykitty";
-      window_padding_width = 10;  
+      window_padding_width = 10;
       background_opacity = lib.mkForce "0.5";
-      background_blur = lib.mkForce 5;       
+      background_blur = lib.mkForce 5;
     };
     extraConfig = ''
       startup_session ${homeDirectory}/nixos/config/kitty/launch.kitty-session

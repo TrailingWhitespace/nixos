@@ -11,7 +11,6 @@
   sddm-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "pixel_sakura";
     themeConfig = {
-     
       HeaderTextColor = "#${foreground}";
       DateTextColor = "#${foreground}";
       TimeTextColor = "#${foreground}";

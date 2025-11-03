@@ -4,16 +4,11 @@
   config,
   ...
 }: {
-
-config.stylix.autoEnable = false;
-config.stylix.targets.kitty.enable = true;
-
-
+  config.stylix.autoEnable = false;
+  config.stylix.targets.kitty.enable = true;
 
   config.stylix = {
     enable = true;
-    
-    
 
     # See https://tinted-theming.github.io/tinted-gallery/ for more schemes
     base16Scheme = {
@@ -34,8 +29,6 @@ config.stylix.targets.kitty.enable = true;
       base0E = "cba6f7"; # Keywords, Storage, Selector, Markup Italic, Diff Changed
       base0F = "f2cdcd"; # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
     };
-
-  
 
     fonts = {
       monospace = {

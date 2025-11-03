@@ -88,7 +88,6 @@
 
           inputs.disko.nixosModules.disko
           inputs.stylix.nixosModules.stylix
-          
         ];
       };
     };
