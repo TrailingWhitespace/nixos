@@ -13,6 +13,7 @@ in {
     };
     settings = {
       scrollback_lines = 10000;
+      scrollbar = "never";
       initial_window_width = 1200;
       initial_window_height = 600;
       update_check_interval = 0;
