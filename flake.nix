@@ -23,6 +23,7 @@
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
     dms-cli = {
       url = "github:AvengeMedia/danklinux";
       inputs.nixpkgs.follows = "nixpkgs";

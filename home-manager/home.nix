@@ -76,6 +76,7 @@
     qbittorrent-enhanced
     yazi
     tree
+    python314
   ];
 
   home.pointerCursor = {
