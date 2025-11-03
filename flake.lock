@@ -79,11 +79,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761392494,
-        "narHash": "sha256-Xabw0gwVYKY158DyhNlKopAhjAw54wu7Ws0SmVVrjVA=",
+        "lastModified": 1761962468,
+        "narHash": "sha256-M+RNHviu4H7/iVzubX5NvBGP7mKIbvzQTaKIfv+10QM=",
         "owner": "caelestia-dots",
         "repo": "cli",
-        "rev": "cc458bf8598c0beab27b5dc4331b0cf2ee654165",
+        "rev": "1cea6fb42a533d29d42c2219e405e0b058b5bedc",
         "type": "github"
       },
       "original": {
@@ -101,11 +101,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1761925697,
-        "narHash": "sha256-v6ykOGQR7WIFPKHEKI2qwypsKCbtPkVrGCV4hzg/MOc=",
+        "lastModified": 1762159842,
+        "narHash": "sha256-tb7oDTsUtnP+hUN0b8PB0xKqCF5AtFnos7c8pEM1b9E=",
         "owner": "caelestia-dots",
         "repo": "shell",
-        "rev": "ea20e02d61c9d3bede58d4edf42eb711e538ffe8",
+        "rev": "668b42214923c4585504c0b25fe4432b91b1b577",
         "type": "github"
       },
       "original": {
@@ -127,11 +127,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762019587,
-        "narHash": "sha256-FFfvV6DHqTvHPOc9r6Bt57rt57fek4sArQ4MgvYQo7M=",
+        "lastModified": 1762130447,
+        "narHash": "sha256-e2np+Sz9ZesqyqAnS8TtKj2ODRpVVhMqbrVc4lUz04E=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "ca226e98c2d30c753c9fb000e19aded51bb78781",
+        "rev": "66e3cc77c568a595f4a0603a311ed7efa17af486",
         "type": "github"
       },
       "original": {
@@ -188,11 +188,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762017062,
-        "narHash": "sha256-QtLFqEZYZMLynpkXQvU3p4rBKEJ61RcDra9n+IfW13k=",
+        "lastModified": 1762143894,
+        "narHash": "sha256-tazSXQuDOWzBNX5UlPifPHcHm9fazC7DsBhgCpZtPPQ=",
         "owner": "AvengeMedia",
         "repo": "danklinux",
-        "rev": "f701ee27d620d864fec9d8762b5529e714f5a3e2",
+        "rev": "a4b73bceb916e2d5ad15c3301796fd97e84a5ca4",
         "type": "github"
       },
       "original": {
@@ -319,11 +319,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762025346,
-        "narHash": "sha256-6KR4dsNfA3Pqm6uT8j7aKjWydP/KXFqZUhOfMlfP+1E=",
+        "lastModified": 1762146130,
+        "narHash": "sha256-/XOEA0a61fZ45i/BpaSsyLNNbw/yKwjMbkB/IWSGLzU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "87044c57222fb485974062e2dd557e7b8abd8fff",
+        "rev": "b5ed4afc2277339bdf0e9edf59befff7350cf075",
         "type": "github"
       },
       "original": {
@@ -428,11 +428,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1760822546,
-        "narHash": "sha256-cy3wJQQzQbZ/EYUfTDuMiP/haPOjkqGgWOPPl7K9oiM=",
+        "lastModified": 1761897390,
+        "narHash": "sha256-er4gYrIoThYLjlsOMTysoRfn67d1Gci+ZpqDrtQxrA0=",
         "ref": "refs/heads/master",
-        "rev": "3e2ce40b18af943f9ba370ed73565e9f487663ef",
-        "revCount": 697,
+        "rev": "fc704e6b5d445899a1565955268c91942a4f263f",
+        "revCount": 700,
         "type": "git",
         "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
       },
