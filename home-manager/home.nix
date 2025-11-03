@@ -84,6 +84,9 @@
     vesktop
     vlc
     mpvpaper
+    pipes
+    tenki
+    cmatrix
   ];
 
   home.pointerCursor = {

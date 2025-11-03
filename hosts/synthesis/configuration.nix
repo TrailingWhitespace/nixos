@@ -96,7 +96,7 @@
     prabhas = {
       isNormalUser = true;
       description = "Prabhas";
-      extraGroups = ["wheel" "networkmanager" "docker"];
+      extraGroups = ["wheel" "networkmanager" "docker" "render" "video"];
       initialPassword = "temp123";
     };
   };
