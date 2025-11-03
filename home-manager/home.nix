@@ -122,9 +122,14 @@
        adblockify
        hidePodcasts
        shuffle 
+       beautifulLyrics
      ];
+     enabledSnippets = with spicePkgs.snippets; [
+        rotatingCoverart
+        pointer
+      ];
      theme = spicePkgs.themes.catppuccin;
-     colorScheme = "mocha";
+     colorScheme = "macchiato";
    };
 
   # Nicely reload system units when changing configs

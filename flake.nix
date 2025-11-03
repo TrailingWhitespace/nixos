@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # "github:nixos/nixpkgs/nixos-25.05"; # upgrade to 25.11 on release
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -37,8 +38,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     # Sops
-    # spicetify
-
+    
     stylix.url = "github:danth/stylix";
   };
 
