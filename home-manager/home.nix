@@ -81,6 +81,7 @@
     python313
     python313Packages.pip
     trashy
+    vesktop
   ];
 
   home.pointerCursor = {
