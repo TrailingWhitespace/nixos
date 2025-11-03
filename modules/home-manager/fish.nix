@@ -14,6 +14,7 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      nitch
     '';
 
     # Use Oh My Fish (OMF) plugin manager equivalent
