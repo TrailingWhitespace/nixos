@@ -3,7 +3,9 @@
   config,
   lib, 
   ...
-}:{
+}: let
+  homeDirectory = config.home.homeDirectory;
+in {
   programs.kitty = {
     enable = true;
     keybindings = {
@@ -31,5 +33,8 @@
       background_opacity = lib.mkForce "0.5";
       background_blur = lib.mkForce 5;       
     };
+    extraConfig = ''
+      startup_session ${homeDirectory}/nixos/config/kitty/launch.kitty-session
+    '';
   };
 }

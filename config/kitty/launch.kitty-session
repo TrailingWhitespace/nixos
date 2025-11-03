@@ -1,0 +1,4 @@
+# This runs nitch and then uses the 'exec' command to replace
+# the current shell process with an interactive Zsh (or bash) shell.
+# This keeps the window open and usable after nitch runs.
+launch sh -c "nitch && exec zsh"
