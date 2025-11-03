@@ -82,6 +82,8 @@
     python313Packages.pip
     trashy
     vesktop
+    vlc
+    mpvpaper
   ];
 
   home.pointerCursor = {
