@@ -14,6 +14,7 @@
     outputs.homeManagerModules.zsh
     outputs.homeManagerModules.fish
     outputs.homeManagerModules.kitty
+    outputs.homeManagerModules.stylix
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 

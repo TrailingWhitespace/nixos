@@ -1,5 +1,9 @@
 # Kitty is a fast, featureful, GPU based terminal emulator
 {
+  config,
+  lib, 
+  ...
+}:{
   programs.kitty = {
     enable = true;
     keybindings = {
@@ -20,12 +24,12 @@
       cursor_underline_thickness = 3;
       cursor_trail = 3;
       cursor_trail_decay = "0.1 0.4";
-      window_padding_width = 10;
       open_url_with = "default";
       allow_remote_control = "yes";
       listen_on = "unix:/tmp/mykitty";
-      background_opacity = "0.5";
-      background_blur = 5;
+      window_padding_width = 10;  
+      background_opacity = lib.mkForce "0.5";
+      background_blur = lib.mkForce 5;       
     };
   };
 }

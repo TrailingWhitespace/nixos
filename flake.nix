@@ -103,6 +103,8 @@
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix
+
+          inputs.stylix.homeModules.stylix
         ];
       };
     };
