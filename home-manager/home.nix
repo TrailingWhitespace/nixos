@@ -87,6 +87,8 @@ in {
     pipes
     tenki
     cmatrix
+    ffmpeg
+    ffmpegthumbnailer 
     # stremio
   ];
 
