@@ -38,7 +38,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     # Sops
-    
+
     stylix.url = "github:danth/stylix";
   };
 

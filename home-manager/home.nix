@@ -5,9 +5,9 @@
   config,
   pkgs,
   ...
-}: let 
+}: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-  in {
+in {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -87,7 +87,12 @@
     pipes
     tenki
     cmatrix
+    # stremio
   ];
+
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "qtwebengine-5.15.19" # stremio
+  # ];
 
   home.pointerCursor = {
     gtk.enable = true;
@@ -119,21 +124,21 @@
 
   programs.dankMaterialShell.enable = true;
 
-   programs.spicetify = {
-     enable = true;
-     enabledExtensions = with spicePkgs.extensions; [
-       adblockify
-       hidePodcasts
-       shuffle 
-       beautifulLyrics
-     ];
-     enabledSnippets = with spicePkgs.snippets; [
-        rotatingCoverart
-        pointer
-      ];
-     theme = spicePkgs.themes.catppuccin;
-     colorScheme = "macchiato";
-   };
+  programs.spicetify = {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      adblockify
+      hidePodcasts
+      shuffle
+      beautifulLyrics
+    ];
+    enabledSnippets = with spicePkgs.snippets; [
+      rotatingCoverart
+      pointer
+    ];
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "macchiato";
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
