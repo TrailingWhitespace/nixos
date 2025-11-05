@@ -25,6 +25,32 @@
   # Add here the flatpaks you want to install
   services.flatpak.packages = [
     "com.stremio.Stremio"
+    "app.zen_browser.zen"
+    "io.github.nozwock.Packet"
+    "com.usebottles.bottles"
+    "net.nokyan.Resources"
+    "com.protonvpn.www"
+    "io.github.kolunmi.Bazaar"
+    "io.github.flattool.Warehouse"
+    "io.github.aandrew_me.ytdn"
+    "org.gnome.baobab"
+    "com.jetbrains.IntelliJ-IDEA-Community"
+    "me.proton.Pass"
+    "com.github.marhkb.Pods"
+    "io.github.ppvan.tarug"
+    "io.beekeeperstudio.Studio"
+    "org.kde.index"
+    "dev.deedles.Trayscale"
+    "org.gnome.Logs"
+    "com.github.paolostivanin.OTPClient"
+    "best.ellie.StartupConfiguration"
+    "org.kde.kdf"
+    "io.github.qier222.YesPlayMusic"
+    "io.bassi.Amberol"
+    "com.github.neithern.g4music"
+    "com.pojtinger.felicitas.Multiplex"
+    "org.kde.audiotube"
+    # "io.ente.auth"
   ];
 
 

@@ -92,7 +92,14 @@ in {
     cmatrix
     ffmpeg
     ffmpegthumbnailer 
+    # protonvpn-gui
+    obsidian
+    gitkraken
     # stremio
+    kdePackages.filelight
+    jdk
+    proton-authenticator
+    # ente-auth
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
