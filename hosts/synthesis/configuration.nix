@@ -281,7 +281,9 @@ networking.firewall.trustedInterfaces = [ "tailscale0" ];
 # For simplicity, if binding to 0.0.0.0, ensure 5900 is open:
 networking.firewall.allowedTCPPorts = [ 5900 ]; # Only if binding to 0.0.0.0
 
-
+users.users.prabhas.openssh.authorizedKeys.keys = [
+  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINf93AnJYnnaQHSpLjbFXi9vAQIkkro6eTNm0hXwtbsn prabhas@synthesis"
+];
 
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
