@@ -40,6 +40,8 @@
     # Sops
 
     stylix.url = "github:danth/stylix";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs = {
@@ -85,6 +87,7 @@
 
           inputs.disko.nixosModules.disko
           inputs.stylix.nixosModules.stylix
+          inputs.nix-flatpak.nixosModules.nix-flatpak
         ];
       };
     };
@@ -102,6 +105,7 @@
 
           inputs.stylix.homeModules.stylix
           inputs.spicetify-nix.homeManagerModules.spicetify
+          # inputs.nix-flatpak.homeManagerModules.nix-flatpak
         ];
       };
     };

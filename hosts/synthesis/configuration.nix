@@ -9,6 +9,8 @@
   imports = [
     outputs.nixosModules.impermanence
     outputs.nixosModules.sddm
+    outputs.nixosModules.flatpak
+    
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
@@ -118,6 +120,7 @@
     };
   };
 
+# switch to podman
   virtualisation.docker = {
     enable = true;
     extraPackages = [pkgs.docker-buildx];
@@ -245,6 +248,8 @@
 services.udisks2.enable = true; 
   services.gvfs.enable = true; # Mount, trash, and other functionalities
 services.tumbler.enable = true; # Thumbnail support for images
+
+services.flatpak.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";

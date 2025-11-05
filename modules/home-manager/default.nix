@@ -8,4 +8,5 @@
   fish = import ./fish.nix;
   kitty = import ./kitty.nix;
   stylix = import ./stylix.nix;
+  # flatpak = import ./flatpak.nix;
 }

@@ -5,4 +5,5 @@
   # my-module = import ./my-module.nix;
   impermanence = import ./impermanence.nix;
   sddm = import ./sddm.nix;
+  flatpak = import ./flatpak.nix;
 }
