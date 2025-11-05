@@ -100,6 +100,7 @@ in {
     jdk
     proton-authenticator
     # ente-auth
+    seahorse
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [

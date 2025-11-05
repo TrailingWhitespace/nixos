@@ -51,6 +51,10 @@
     "com.pojtinger.felicitas.Multiplex"
     "org.kde.audiotube"
     # "io.ente.auth"
+    "io.github.zarestia_dev.rclone-manager"
+    "io.gitlab.liferooter.TextPieces"
+    "com.github.marktext.marktext"
+    "org.gnome.gitlab.somas.Apostrophe"
   ];
 
 
