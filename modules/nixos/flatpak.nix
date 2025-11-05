@@ -55,6 +55,9 @@
     "io.gitlab.liferooter.TextPieces"
     "com.github.marktext.marktext"
     "org.gnome.gitlab.somas.Apostrophe"
+    "to.bnt.sendworm"
+    "app.drey.Warp"
+    "org.localsend.localsend_app"
   ];
 
 

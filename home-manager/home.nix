@@ -101,6 +101,9 @@ in {
     proton-authenticator
     # ente-auth
     seahorse
+    postgresql
+    termius
+    wayvnc
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [

@@ -88,8 +88,10 @@
   time.timeZone = "Asia/Kolkata";
 
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.sddm.enableGnomeKeyring = true;
-
+  security.pam.services = {
+    login.enableGnomeKeyring = true;
+    sddm.enableGnomeKeyring = true;
+  };
 
   environment.systemPackages = with pkgs; [
     git
@@ -267,6 +269,20 @@ services.udisks2.enable = true;
 services.tumbler.enable = true; # Thumbnail support for images
 
 services.flatpak.enable = true;
+
+services.tailscale.enable = true;
+
+ # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+networking.firewall.enable = true;
+networking.firewall.trustedInterfaces = [ "tailscale0" ];
+# If you bind WayVNC to 0.0.0.0, you *must* also allow the port (default 5900)
+# on the tailscale0 interface, though setting it to bind to the Tailscale IP is safer.
+# For simplicity, if binding to 0.0.0.0, ensure 5900 is open:
+networking.firewall.allowedTCPPorts = [ 5900 ]; # Only if binding to 0.0.0.0
+
+
+
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
