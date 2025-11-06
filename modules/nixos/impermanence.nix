@@ -51,7 +51,9 @@
     ];
     files = [
       "/etc/machine-id"
-      # "/etc/shadow"
+      "/etc/shadow"
+      "/etc/group"
+      "/etc/passwd"
     ];
   };
 }

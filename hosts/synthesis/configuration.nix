@@ -94,12 +94,14 @@
     kitty
   ];
 
+users.mutableUsers = true;
   users.users = {
     prabhas = {
       isNormalUser = true;
       description = "Prabhas";
       extraGroups = ["wheel" "networkmanager" "docker" "render" "video"];
       initialPassword = "temp123";
+      # hashedPassword = "$6$m3wVaEn7rvjnrRjp$PWOhPLtKFDom4w5TUs5DDAIm1V5HI0iiD5GZF9av2YBurSjXPHlW0NhaGh2kw5Nq7ZxRMLn9Hjq3DgQ7hfFCX0";
     };
   };
 
