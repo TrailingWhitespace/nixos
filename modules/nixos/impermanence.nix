@@ -45,15 +45,15 @@
 
       # "/etc"
 
-      "/etc/nixos"
+      # "/etc/nixos"
       "/etc/ssh"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
       "/etc/machine-id"
-      "/etc/shadow"
-      "/etc/group"
-      "/etc/passwd"
+      # "/etc/shadow"
+      # "/etc/group"
+      # "/etc/passwd"
     ];
   };
 }
