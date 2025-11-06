@@ -329,6 +329,17 @@
 };
 
 
+programs.git.enable = true;
+programs.git.config = {
+  user.name = "TrailingWhitespace";
+  user.email = "flash1719@protonmail.com";
+  commit.gpgsign = "true";
+  gpg.format = "ssh";
+  user.signingkey = "~/.ssh/id_ed25519";
+};
+
+
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
 }
