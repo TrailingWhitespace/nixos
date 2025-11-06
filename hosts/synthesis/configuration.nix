@@ -103,7 +103,8 @@ users.mutableUsers = false;
       isNormalUser = true;
       description = "Prabhas";
       extraGroups = ["wheel" "networkmanager" "docker" "render" "video"];
-      # initialPassword = "temp123";
+      # initialPassword = "temp123"; Initial password overrides hashedPassword if mutableUsers = false
+      # User options: https://mynixos.com/nixpkgs/options/users.users.%3Cname%3E
       hashedPassword = "$6$m3wVaEn7rvjnrRjp$PWOhPLtKFDom4w5TUs5DDAIm1V5HI0iiD5GZF9av2YBurSjXPHlW0NhaGh2kw5Nq7ZxRMLn9Hjq3DgQ7hfFCX0";
     };
   };
