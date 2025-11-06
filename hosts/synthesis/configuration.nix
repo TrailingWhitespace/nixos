@@ -94,7 +94,7 @@
     kitty
   ];
 
-users.mutableUsers = true;
+users.mutableUsers = false;
   users.users = {
     prabhas = {
       isNormalUser = true;
