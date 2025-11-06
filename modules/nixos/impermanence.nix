@@ -40,17 +40,17 @@
       "/var/spool"
       "/var/db"
 
-      "/root"
-      "/srv"
+      # "/root"
+      # "/srv"
 
-      "/etc"
+      # "/etc"
 
-      # "/etc/nixos"
-      # "/etc/ssh"
-      # "/etc/NetworkManager/system-connections"
+      "/etc/nixos"
+      "/etc/ssh"
+      "/etc/NetworkManager/system-connections"
     ];
     files = [
-      # "/etc/machine-id"
+      "/etc/machine-id"
       # "/etc/shadow"
     ];
   };

@@ -314,7 +314,7 @@
   };
   */
 
-# change this to get config or home dir and not use hardcoded /home/prabhas
+
   sops.defaultSopsFile = /home/prabhas/nixos/secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   
@@ -327,16 +327,32 @@
   group = "users";
   mode = "0600";
 };
+sops.secrets.ssh_allowed_signers = {
+  sopsFile = ../../secrets/secrets.yaml;
+  path = "/home/prabhas/.ssh/allowed_signers";
+  owner = "prabhas";
+  group = "users";
+  mode = "0600";
+};
+
 
 
 programs.git.enable = true;
+
 programs.git.config = {
   user.name = "TrailingWhitespace";
   user.email = "flash1719@protonmail.com";
-  commit.gpgsign = "true";
+
+  commit.gpgsign = true;
+
   gpg.format = "ssh";
-  user.signingkey = "~/.ssh/id_ed25519";
+
+
+  user.signingkey = "/home/prabhas/.ssh/id_ed25519";
+
+  gpg.ssh.allowedSignersFile = "/home/prabhas/.ssh/allowed_signers";
 };
+
 
 
 
