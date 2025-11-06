@@ -268,10 +268,10 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   services.openssh.settings = {
-  PasswordAuthentication = false;
-  KbdInteractiveAuthentication = false;
- PermitRootLogin = "prohibit-password";
-};
+    PasswordAuthentication = false;
+    KbdInteractiveAuthentication = false;
+    PermitRootLogin = "prohibit-password";
+  };
 
   networking.firewall.enable = true;
   networking.firewall.trustedInterfaces = ["tailscale0"];
@@ -314,47 +314,40 @@
   };
   */
 
-
   sops.defaultSopsFile = /home/prabhas/nixos/secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
-  
+
   sops.age.keyFile = "/home/prabhas/.config/sops/age/keys.txt";
 
   sops.secrets.ssh_key = {
-  sopsFile = ../../secrets/secrets.yaml; 
-  path = "/home/prabhas/.ssh/id_ed25519";
-  owner = "prabhas";
-  group = "users";
-  mode = "0600";
-};
-sops.secrets.ssh_allowed_signers = {
-  sopsFile = ../../secrets/secrets.yaml;
-  path = "/home/prabhas/.ssh/allowed_signers";
-  owner = "prabhas";
-  group = "users";
-  mode = "0600";
-};
+    sopsFile = ../../secrets/secrets.yaml;
+    path = "/home/prabhas/.ssh/id_ed25519";
+    owner = "prabhas";
+    group = "users";
+    mode = "0600";
+  };
+  sops.secrets.ssh_allowed_signers = {
+    sopsFile = ../../secrets/secrets.yaml;
+    path = "/home/prabhas/.ssh/allowed_signers";
+    owner = "prabhas";
+    group = "users";
+    mode = "0600";
+  };
 
+  programs.git.enable = true;
 
+  programs.git.config = {
+    user.name = "TrailingWhitespace";
+    user.email = "flash1719@protonmail.com";
 
-programs.git.enable = true;
+    commit.gpgsign = true;
 
-programs.git.config = {
-  user.name = "TrailingWhitespace";
-  user.email = "flash1719@protonmail.com";
+    gpg.format = "ssh";
 
-  commit.gpgsign = true;
+    user.signingkey = "/home/prabhas/.ssh/id_ed25519";
 
-  gpg.format = "ssh";
-
-
-  user.signingkey = "/home/prabhas/.ssh/id_ed25519";
-
-  gpg.ssh.allowedSignersFile = "/home/prabhas/.ssh/allowed_signers";
-};
-
-
-
+    gpg.ssh.allowedSignersFile = "/home/prabhas/.ssh/allowed_signers";
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
