@@ -267,6 +267,12 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.openssh.settings = {
+  PasswordAuthentication = false;
+  KbdInteractiveAuthentication = false;
+ PermitRootLogin = "prohibit-password";
+};
+
   networking.firewall.enable = true;
   networking.firewall.trustedInterfaces = ["tailscale0"];
   # If you bind WayVNC to 0.0.0.0, you *must* also allow the port (default 5900)
