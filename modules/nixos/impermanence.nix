@@ -38,7 +38,7 @@
       "/var/log"
       "/var/lib"
       "/var/spool"
-      "/var/db"
+      "/var/db" # /var/db/sudo/lectured -- persist to not show that running sudo for the first time disclaimer thing every time
 
       # "/root"
       # "/srv"
