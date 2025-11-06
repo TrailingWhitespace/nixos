@@ -57,6 +57,7 @@
     "to.bnt.sendworm"
     "app.drey.Warp"
     "org.localsend.localsend_app"
+    "org.gnome.Loupe"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides

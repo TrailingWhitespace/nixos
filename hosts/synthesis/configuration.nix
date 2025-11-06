@@ -94,6 +94,9 @@
     kitty
   ];
 
+# Maybe change back to passwords being mutable and use initialPassword and not hashedPassword
+# https://github.com/TrailingWhitespace/nixos/commit/c953750c2adb301a0efc6694daad02c83412fe82
+# https://github.com/TrailingWhitespace/nixos/commit/fff7c55431906b4255a857e241f476503570c23a
 users.mutableUsers = false;
   users.users = {
     prabhas = {
