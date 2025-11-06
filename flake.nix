@@ -37,7 +37,10 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
-    # Sops
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     stylix.url = "github:danth/stylix";
 
@@ -88,6 +91,7 @@
           inputs.disko.nixosModules.disko
           inputs.stylix.nixosModules.stylix
           inputs.nix-flatpak.nixosModules.nix-flatpak
+          inputs.sops-nix.nixosModules.sops
         ];
       };
     };

@@ -314,6 +314,21 @@
   };
   */
 
+# change this to get config or home dir and not use hardcoded /home/prabhas
+  sops.defaultSopsFile = /home/prabhas/nixos/secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  
+  sops.age.keyFile = "/home/prabhas/.config/sops/age/keys.txt";
+
+  sops.secrets.ssh_key = {
+  sopsFile = ../../secrets/secrets.yaml; 
+  path = "/home/prabhas/.ssh/id_ed25519";
+  owner = "prabhas";
+  group = "users";
+  mode = "0600";
+};
+
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
 }

@@ -102,6 +102,8 @@ in {
     seahorse
     postgresql
     termius
+    age
+    sops
     # wayvnc
   ];
 
