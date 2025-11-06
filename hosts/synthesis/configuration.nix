@@ -87,11 +87,7 @@
 
   time.timeZone = "Asia/Kolkata";
 
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services = {
-    login.enableGnomeKeyring = true;
-    sddm.enableGnomeKeyring = true;
-  };
+  
 
   environment.systemPackages = with pkgs; [
     git
@@ -283,6 +279,34 @@
   users.users.prabhas.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINf93AnJYnnaQHSpLjbFXi9vAQIkkro6eTNm0hXwtbsn prabhas@synthesis"
   ];
+
+services.gnome.gnome-keyring.enable = true;
+  security.pam.services = {
+    login.enableGnomeKeyring = true;
+    sddm.enableGnomeKeyring = true;
+  };
+  #programs.ssh.startAgent = true;
+  services.gnome.gcr-ssh-agent.enable = true;
+
+services.dbus.packages = [ pkgs.gnome-keyring pkgs.gcr ];
+#environment.sessionVariables.SSH_AUTH_SOCK = "/run/user/$UID/keyring/ssh";
+environment.variables.SSH_AUTH_SOCK = "/run/user/$UID/gcr/ssh";
+
+ # Looks like i dont need
+ /* services.xserver.enable = true;
+services.xserver = {
+     displayManager.sessionCommands = ''
+       eval $(gnome-keyring-daemon --start --daemonize --components=ssh,secrets)
+       export SSH_AUTH_SOCK
+     '';
+};
+
+services.xserver = {
+  displayManager.sessionCommands = ''
+    eval $(gnome-keyring-daemon --start --components=secrets,ssh,pkcs11,gpg)
+    export SSH_AUTH_SOCK
+  '';
+}; */
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
