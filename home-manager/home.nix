@@ -19,7 +19,6 @@ in {
     outputs.homeManagerModules.stylix
     # outputs.homeManagerModules.flatpak
 
-    
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
@@ -91,7 +90,7 @@ in {
     tenki
     cmatrix
     ffmpeg
-    ffmpegthumbnailer 
+    ffmpegthumbnailer
     # protonvpn-gui
     obsidian
     gitkraken
@@ -103,7 +102,7 @@ in {
     seahorse
     postgresql
     termius
-    wayvnc
+    # wayvnc
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
@@ -158,6 +157,14 @@ in {
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
+
+  services.wayvnc = {
+    enable = true;
+
+    #  Listen on all interfaces (0.0.0.0) so it's reachable via Tailscale's IP.
+    settings.address = "0.0.0.0";
+    settings.port = 5900;
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.05";

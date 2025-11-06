@@ -10,7 +10,7 @@
     outputs.nixosModules.impermanence
     outputs.nixosModules.sddm
     outputs.nixosModules.flatpak
-    
+
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
@@ -126,7 +126,6 @@
     };
   };
 
-
   # virtualisation.docker = {
   #   enable = true;
   #   extraPackages = [pkgs.docker-buildx];
@@ -134,17 +133,17 @@
   # virtualisation.docker.storageDriver = "btrfs";
 
   # Enable common container config files in /etc/containers
-        virtualisation.containers.enable = true;
-        virtualisation.containers.storage.settings.storage.driver = "btrfs";
+  virtualisation.containers.enable = true;
+  virtualisation.containers.storage.settings.storage.driver = "btrfs";
 
   virtualisation.podman = {
-  enable = true;
-   # Create a `docker` alias for podman, to use it as a drop-in replacement
-  dockerCompat = true;
-  autoPrune.enable = false;
-  # Create the default bridge network for podman
-  defaultNetwork.settings.dns_enabled = true;
-};
+    enable = true;
+    # Create a `docker` alias for podman, to use it as a drop-in replacement
+    dockerCompat = true;
+    autoPrune.enable = false;
+    # Create the default bridge network for podman
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   boot = {
     kernelParams = [
@@ -264,27 +263,26 @@
     LC_TIME = "en_IN";
   };
 
-services.udisks2.enable = true; 
+  services.udisks2.enable = true;
   services.gvfs.enable = true; # Mount, trash, and other functionalities
-services.tumbler.enable = true; # Thumbnail support for images
+  services.tumbler.enable = true; # Thumbnail support for images
 
-services.flatpak.enable = true;
+  services.flatpak.enable = true;
 
-services.tailscale.enable = true;
+  services.tailscale.enable = true;
 
- # Enable the OpenSSH daemon.
+  # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-networking.firewall.enable = true;
-networking.firewall.trustedInterfaces = [ "tailscale0" ];
-# If you bind WayVNC to 0.0.0.0, you *must* also allow the port (default 5900)
-# on the tailscale0 interface, though setting it to bind to the Tailscale IP is safer.
-# For simplicity, if binding to 0.0.0.0, ensure 5900 is open:
-networking.firewall.allowedTCPPorts = [ 5900 ]; # Only if binding to 0.0.0.0
+  networking.firewall.enable = true;
+  networking.firewall.trustedInterfaces = ["tailscale0"];
+  # If you bind WayVNC to 0.0.0.0, you *must* also allow the port (default 5900)
+  # on the tailscale0 interface, though setting it to bind to the Tailscale IP is safer.
+  # For simplicity, if binding to 0.0.0.0, ensure 5900 is open:
+  networking.firewall.allowedTCPPorts = [5900]; # Only if binding to 0.0.0.0
 
-users.users.prabhas.openssh.authorizedKeys.keys = [
-  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINf93AnJYnnaQHSpLjbFXi9vAQIkkro6eTNm0hXwtbsn prabhas@synthesis"
-];
-
+  users.users.prabhas.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINf93AnJYnnaQHSpLjbFXi9vAQIkkro6eTNm0hXwtbsn prabhas@synthesis"
+  ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
