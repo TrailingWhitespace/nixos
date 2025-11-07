@@ -58,6 +58,8 @@
     "app.drey.Warp"
     "org.localsend.localsend_app"
     "org.gnome.Loupe"
+    "org.onlyoffice.desktopeditors"
+    "org.fkoehler.KTailctl"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides
