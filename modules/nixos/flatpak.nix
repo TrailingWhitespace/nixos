@@ -26,7 +26,7 @@
     "com.stremio.Stremio"
     "app.zen_browser.zen"
     "io.github.nozwock.Packet"
-    "com.usebottles.bottles"
+    # "com.usebottles.bottles"
     "net.nokyan.Resources"
     "com.protonvpn.www"
     "io.github.kolunmi.Bazaar"
@@ -60,6 +60,7 @@
     "org.gnome.Loupe"
     "org.onlyoffice.desktopeditors"
     "org.fkoehler.KTailctl"
+    "io.github.mfat.sshpilot"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides

@@ -67,7 +67,7 @@ in {
     slurp
     bibata-cursors
     nerd-fonts.jetbrains-mono
-    winboat
+    # winboat
     btrfs-progs
     kdePackages.kate
     fastfetch
@@ -104,6 +104,8 @@ in {
     termius
     age
     sops
+    zathura
+    typora
     # wayvnc
   ];
 
