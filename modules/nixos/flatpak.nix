@@ -44,7 +44,7 @@
     "com.github.paolostivanin.OTPClient"
     "best.ellie.StartupConfiguration"
     "org.kde.kdf"
-    "io.github.qier222.YesPlayMusic"
+    # "io.github.qier222.YesPlayMusic"
     "io.bassi.Amberol"
     "com.github.neithern.g4music"
     "com.pojtinger.felicitas.Multiplex"
@@ -62,6 +62,9 @@
     "org.fkoehler.KTailctl"
     "io.github.mfat.sshpilot"
     "io.github.celluloid_player.Celluloid"
+    "org.nickvision.tubeconverter"
+    # "io.github.onionware_github.onionmedia"
+    # "com.github.KRTirtho.Spotube"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides

@@ -113,6 +113,7 @@ in {
     ipfetch
     # wayvnc
     vscodium
+    yt-dlp
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
