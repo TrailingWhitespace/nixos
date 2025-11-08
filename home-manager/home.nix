@@ -17,6 +17,9 @@ in {
     outputs.homeManagerModules.fish
     outputs.homeManagerModules.kitty
     outputs.homeManagerModules.stylix
+    outputs.homeManagerModules.gtk
+    outputs.homeManagerModules.qt
+    outputs.homeManagerModules.xdg
     # outputs.homeManagerModules.flatpak
 
     # Or modules exported from other flakes (such as nix-colors):
@@ -106,7 +109,10 @@ in {
     sops
     zathura
     typora
+    pfetch
+    ipfetch
     # wayvnc
+    vscodium
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
@@ -119,24 +125,6 @@ in {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
     size = 24;
-  };
-
-  gtk = {
-    enable = true;
-    theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
-    };
-
-    iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
-    };
-
-    font = {
-      name = "JetBrainsMono NF";
-      size = 11;
-    };
   };
 
   programs.home-manager.enable = true;

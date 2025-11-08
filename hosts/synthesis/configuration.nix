@@ -94,8 +94,8 @@
     kitty
   ];
 
-  # Maybe change back to passwords being mutable and use initialPassword and not hashedPassword, 
-  # or could define both and set mutableUsers to true, in which hashedPassword takes precedence over initialPassword 
+  # Maybe change back to passwords being mutable and use initialPassword and not hashedPassword,
+  # or could define both and set mutableUsers to true, in which hashedPassword takes precedence over initialPassword
   # https://github.com/TrailingWhitespace/nixos/commit/c953750c2adb301a0efc6694daad02c83412fe82
   # https://github.com/TrailingWhitespace/nixos/commit/fff7c55431906b4255a857e241f476503570c23a
   users.mutableUsers = false;
@@ -107,15 +107,16 @@
       # initialPassword = "temp123"; Initial password overrides hashedPassword if mutableUsers = false
       # User options: https://mynixos.com/nixpkgs/options/users.users.%3Cname%3E
       hashedPassword = "$6$m3wVaEn7rvjnrRjp$PWOhPLtKFDom4w5TUs5DDAIm1V5HI0iiD5GZF9av2YBurSjXPHlW0NhaGh2kw5Nq7ZxRMLn9Hjq3DgQ7hfFCX0";
-      
-      /* Precedence of options in each case
-      
-      If the option users.mutableUsers is false, then the order of precedence is as shown below, 
-      where values on the left are overridden by values on the right: 
+
+      /*
+         Precedence of options in each case
+
+      If the option users.mutableUsers is false, then the order of precedence is as shown below,
+      where values on the left are overridden by values on the right:
       initialHashedPassword -> hashedPassword -> initialPassword -> password -> hashedPasswordFile
 
-      If the option users.mutableUsers is true, then the order of precedence is as shown below, 
-      where values on the left are overridden by values on the right: 
+      If the option users.mutableUsers is true, then the order of precedence is as shown below,
+      where values on the left are overridden by values on the right:
       initialHashedPassword -> initialPassword -> hashedPassword -> password -> hashedPasswordFile
       */
     };

@@ -61,6 +61,7 @@
     "org.onlyoffice.desktopeditors"
     "org.fkoehler.KTailctl"
     "io.github.mfat.sshpilot"
+    "io.github.celluloid_player.Celluloid"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides

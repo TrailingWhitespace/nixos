@@ -8,5 +8,8 @@
   fish = import ./fish.nix;
   kitty = import ./kitty.nix;
   stylix = import ./stylix.nix;
+  gtk = import ./gtk.nix;
+  qt = import ./qt.nix;
+  xdg = import ./xdg.nix;
   # flatpak = import ./flatpak.nix;
 }
