@@ -114,6 +114,7 @@ in {
     # wayvnc
     vscodium
     yt-dlp
+    heroic
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
