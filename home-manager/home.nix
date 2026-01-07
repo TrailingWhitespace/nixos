@@ -111,10 +111,13 @@ in {
     typora
     pfetch
     ipfetch
-    # wayvnc
+    wayvnc
     vscodium
     yt-dlp
     heroic
+    steam
+    lutris
+    tigervnc
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [

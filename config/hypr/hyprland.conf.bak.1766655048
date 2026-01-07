@@ -111,7 +111,6 @@ bind = Ctrl+Super, Left, workspace, r-1
 bind = $mainMod, F1, exec, hyprmon --profile BOTH
 bind = $mainMod, F2, exec, hyprmon --profile LAPTOP_ONLY
 bind = $mainMod, F3, exec, hyprmon --profile HDMI_ONLY
-bind = $mainMod, F4 , exec, hyprmon --profile SAMSUNG_S3
 
 monitor=eDP-1,disable
-monitor=HDMI-A-1,1920x1080@60.00,1920x0,1.00
+monitor=HDMI-A-1,1680x1050@59.97,1920x0,1.00
