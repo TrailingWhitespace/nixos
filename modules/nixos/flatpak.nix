@@ -65,6 +65,8 @@
     "org.nickvision.tubeconverter"
     # "io.github.onionware_github.onionmedia"
     # "com.github.KRTirtho.Spotube"
+    "io.github.ellie_commons.reminduck"
+    "com.valvesoftware.Steam"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides
