@@ -138,6 +138,7 @@ in {
     noto-fonts-color-emoji
     xclip
     xsel
+    file
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
