@@ -26,6 +26,9 @@
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  fileSystems."/home" = {
+    neededForBoot = true;
+  };
   fileSystems."/persist" = {
     neededForBoot = true;
   };

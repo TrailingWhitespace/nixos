@@ -55,5 +55,12 @@
       # "/etc/group"
       # "/etc/passwd"
     ];
+
+    users.prabhas = {
+      directories = [
+        ".config/sops"
+        ".ssh"
+      ];
+    };
   };
 }
