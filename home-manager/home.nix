@@ -108,7 +108,7 @@ in {
     age
     sops
     zathura
-    typora
+    #typora
     pfetch
     ipfetch
     wayvnc
@@ -118,6 +118,26 @@ in {
     steam
     lutris
     tigervnc
+    ani-cli
+    caffeine-ng
+    atlauncher
+    prismlauncher
+    obs-studio
+    scrcpy
+    nodejs_24
+    # rofi
+    # wofi
+    fuzzel
+    rofimoji
+    tofi
+    xdotool
+    wtype
+    ydotool
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+    xclip
+    xsel
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
@@ -136,21 +156,21 @@ in {
 
   programs.dankMaterialShell.enable = true;
 
-  programs.spicetify = {
-    enable = true;
-    enabledExtensions = with spicePkgs.extensions; [
-      adblockify
-      hidePodcasts
-      shuffle
-      beautifulLyrics
-    ];
-    enabledSnippets = with spicePkgs.snippets; [
-      rotatingCoverart
-      pointer
-    ];
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "macchiato";
-  };
+  # programs.spicetify = {
+  #   enable = true;
+  #   enabledExtensions = with spicePkgs.extensions; [
+  #     adblockify
+  #     hidePodcasts
+  #     shuffle
+  #     # beautifulLyrics
+  #   ];
+  #   enabledSnippets = with spicePkgs.snippets; [
+  #     rotatingCoverart
+  #     pointer
+  #   ];
+  #   theme = spicePkgs.themes.comfy;
+  #   #colorScheme = "macchiato";
+  # };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

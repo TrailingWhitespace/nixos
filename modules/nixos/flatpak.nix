@@ -67,6 +67,9 @@
     # "com.github.KRTirtho.Spotube"
     "io.github.ellie_commons.reminduck"
     "com.valvesoftware.Steam"
+    "org.gnome.Music"
+    "info.febvre.Komikku"
+    "dev.fredol.open-tv"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides
