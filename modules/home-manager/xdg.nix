@@ -6,9 +6,9 @@
       enable = true;
       createDirectories = false;
       extraConfig = {
-        XDG_DEV_DIR = "${config.home.homeDirectory}/Dev";
-        XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Screenshots";
-        XDG_WALLPAPERS_DIR = "${config.home.homeDirectory}/Wallpapers";
+        DEV = "${config.home.homeDirectory}/Dev";
+        SCREENSHOTS = "${config.home.homeDirectory}/Screenshots";
+        WALLPAPERS = "${config.home.homeDirectory}/Wallpapers";
       };
     };
     mimeApps = let

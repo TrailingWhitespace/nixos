@@ -27,7 +27,7 @@ in {
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+    inputs.dankMaterialShell.homeModules.dank-material-shell
   ];
 
   nixpkgs = {
@@ -78,7 +78,7 @@ in {
     nitch
     nerdfetch
     hyprmon
-    xfce.thunar
+    thunar
     kdePackages.dolphin
     qbittorrent-enhanced
     yazi
@@ -139,6 +139,7 @@ in {
     xclip
     xsel
     file
+    # chromium
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
@@ -152,10 +153,15 @@ in {
     name = "Bibata-Modern-Ice";
     size = 24;
   };
+  gtk.gtk4.theme = null;
+
+  xdg.userDirs.setSessionVariables = false;
 
   programs.home-manager.enable = true;
 
   programs.dankMaterialShell.enable = true;
+
+   programs.zsh.dotDir = "${config.xdg.configHome}/zsh";
 
   # programs.spicetify = {
   #   enable = true;
