@@ -78,7 +78,7 @@ in {
     nitch
     nerdfetch
     hyprmon
-    thunar
+    xfce.thunar
     kdePackages.dolphin
     qbittorrent-enhanced
     yazi
@@ -159,9 +159,13 @@ in {
 
   programs.home-manager.enable = true;
 
-  programs.dankMaterialShell.enable = true;
+  programs.dank-material-shell = {
+    enable = true;
+    enableSystemMonitoring = true;
+    dgop.package = inputs.dgop.packages.${pkgs.system}.default;
+  };
 
-   programs.zsh.dotDir = "${config.xdg.configHome}/zsh";
+  programs.zsh.dotDir = "${config.xdg.configHome}/zsh";
 
   # programs.spicetify = {
   #   enable = true;

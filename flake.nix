@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; 
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # currently on unstable/latest pre release switch back to stable if something breaks
     # "github:nixos/nixpkgs/nixos-25.05"; # upgrade to 25.11 on release
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -35,6 +35,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       # inputs.dgop.follows = "dgop";
       # inputs.dms-cli.follows = "dms-cli";
+    };
+
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
