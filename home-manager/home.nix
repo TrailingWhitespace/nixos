@@ -101,6 +101,7 @@ in {
     kdePackages.filelight
     jdk
     proton-authenticator
+    authenticator
     # ente-auth
     seahorse
     postgresql
@@ -114,8 +115,8 @@ in {
     wayvnc
     vscodium
     yt-dlp
-    heroic
-    steam
+   # heroic
+    # steam
     #lutris
     tigervnc
     ani-cli
@@ -140,6 +141,7 @@ in {
     xsel
     file
     # chromium
+    fd
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [

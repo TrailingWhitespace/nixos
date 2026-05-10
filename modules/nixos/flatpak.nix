@@ -66,10 +66,14 @@
     # "io.github.onionware_github.onionmedia"
     # "com.github.KRTirtho.Spotube"
     "io.github.ellie_commons.reminduck"
-    "com.valvesoftware.Steam"
+    # "com.valvesoftware.Steam"
     "org.gnome.Music"
     "info.febvre.Komikku"
     "dev.fredol.open-tv"
+    "com.belmoussaoui.Authenticator"
+    "com.polydez.KeyVault"
+    "me.proton.Pass"
+    "page.codeberg.M23Snezhok.Vinyl"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides
