@@ -116,7 +116,7 @@ in {
     yt-dlp
     heroic
     steam
-    lutris
+    #lutris
     tigervnc
     ani-cli
     caffeine-ng
@@ -155,7 +155,7 @@ in {
   };
   gtk.gtk4.theme = null;
 
-  xdg.userDirs.setSessionVariables = false;
+  # xdg.userDirs.setSessionVariables = false;
 
   programs.home-manager.enable = true;
 

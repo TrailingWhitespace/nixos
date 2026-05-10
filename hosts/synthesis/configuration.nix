@@ -32,6 +32,9 @@
   fileSystems."/persist" = {
     neededForBoot = true;
   };
+  fileSystems."/nix" = {
+  neededForBoot = true;
+};
 
   nixpkgs = {
     # You can add overlays here
@@ -179,12 +182,12 @@
     supportedFilesystems = ["btrfs" "exfat"];
   };
 
-  swapDevices = [
-    {
-      device = "/.swapvol/swapfile";
-      size = 16384; # in MB (16G)
-    }
-  ];
+  # swapDevices = [
+  #   {
+  #     device = "/.swapvol/swapfile";
+  #     size = 16384; # in MB (16G)
+  #   }
+  # ];
 
   boot.resumeDevice = "/dev/disk/by-uuid/301e26ea-dacc-4fbc-814f-653ec5be11b8";
   # ^^^ UUID of /dev/nvme0n1p2 (btrfs-root/root) from 'lsblk -f'
@@ -371,11 +374,11 @@
     gpg.ssh.allowedSignersFile = "/home/prabhas/.ssh/allowed_signers";
   };
 
-  services.cloudflare-warp = {
-    enable = true;
-    # optional:
-    # openFirewall = true;  # if you need firewall rules opened
-  };
+  # services.cloudflare-warp = {
+  #   enable = true;
+  #   # optional:
+  #   # openFirewall = true;  # if you need firewall rules opened
+  # };
 
   
 

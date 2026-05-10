@@ -2,13 +2,15 @@
   description = "My NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; 
+    # currently on unstable/latest pre release switch back to stable if something breaks
     # "github:nixos/nixpkgs/nixos-25.05"; # upgrade to 25.11 on release
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.11";
       # "github:nix-community/home-manager/release-25.05"; # upgrade to 25.11
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -42,7 +44,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:nix-community/stylix/release-25.11";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
