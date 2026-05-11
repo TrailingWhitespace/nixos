@@ -142,6 +142,8 @@ in {
     file
     # chromium
     fd
+    rclone
+    rclone-ui
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [

@@ -291,7 +291,10 @@
   services.tailscale.enable = true;
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+services.openssh = {
+  enable = true;
+  startWhenNeeded = true;  # socket-activated, only starts when a connection comes in
+};
   services.openssh.settings = {
     PasswordAuthentication = false;
     KbdInteractiveAuthentication = false;
