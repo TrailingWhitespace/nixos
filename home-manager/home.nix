@@ -115,7 +115,7 @@ in {
     wayvnc
     vscodium
     yt-dlp
-   # heroic
+    # heroic
     # steam
     #lutris
     tigervnc
@@ -144,6 +144,12 @@ in {
     fd
     rclone
     rclone-ui
+    discord
+    blueman
+    bluez
+    bluez-tools
+    neovim
+    snapper-gui
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [

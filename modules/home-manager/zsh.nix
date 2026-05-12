@@ -7,8 +7,8 @@
   home.packages = with pkgs; [
     eza
     zoxide
-    fzf          # fuzzy finder — powers Ctrl+R history search
-    bat          # better cat, used by fzf previews
+    fzf # fuzzy finder — powers Ctrl+R history search
+    bat # better cat, used by fzf previews
   ];
 
   programs.zsh = {
@@ -20,13 +20,13 @@
     history = {
       path = "$HOME/.config/zsh/.zsh_history";
       size = 100000;
-      save = 100000;        # match save to size — your original bug
-      append = true;        # fixes noappendhistory — no more overwriting!
+      save = 100000; # match save to size — your original bug
+      append = true; # fixes noappendhistory — no more overwriting!
       share = true;
       ignoreAllDups = false; # keep all history, just skip consecutive dups
       ignoreDups = true;
-      ignoreSpace = true;   # commands prefixed with space aren't saved
-      extended = true;      # save timestamps
+      ignoreSpace = true; # commands prefixed with space aren't saved
+      extended = true; # save timestamps
       expireDuplicatesFirst = false;
     };
 
@@ -35,14 +35,14 @@
       theme = "agnoster";
       plugins = [
         "git"
-        "sudo"           # double-tap ESC to prepend sudo
+        "sudo" # double-tap ESC to prepend sudo
         "colored-man-pages"
         "zoxide"
         "z"
-        "fzf"            # Ctrl+R fuzzy history, Ctrl+T file finder, Alt+C cd
-        "extract"        # 'x archive.tar.gz' extracts anything
-        "copypath"       # copies current dir path to clipboard
-        "dirhistory"     # Alt+Left/Right to navigate dir history
+        "fzf" # Ctrl+R fuzzy history, Ctrl+T file finder, Alt+C cd
+        "extract" # 'x archive.tar.gz' extracts anything
+        "copypath" # copies current dir path to clipboard
+        "dirhistory" # Alt+Left/Right to navigate dir history
         "command-not-found" # suggests package when command is missing
       ];
     };

@@ -225,6 +225,7 @@
       General = {
         Experimental = true;
         FastConnectable = true;
+        Enable = "Source,Sink,Media,Socket";
       };
     };
   };
@@ -266,6 +267,8 @@
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
   };
 
@@ -291,10 +294,10 @@
   services.tailscale.enable = true;
 
   # Enable the OpenSSH daemon.
-services.openssh = {
-  enable = true;
-  startWhenNeeded = true;  # socket-activated, only starts when a connection comes in
-};
+  services.openssh = {
+    enable = true;
+    startWhenNeeded = true; # socket-activated, only starts when a connection comes in
+  };
   services.openssh.settings = {
     PasswordAuthentication = false;
     KbdInteractiveAuthentication = false;

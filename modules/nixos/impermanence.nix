@@ -12,7 +12,7 @@
     # Check if our 'root' subvolume exists to be snapshotted
     if [[ -e /btrfs_tmp/root ]]; then
         mkdir -p /btrfs_tmp/old_roots
-        timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
+        timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%d_%H:%M:%S")
         mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
     fi
 
@@ -26,8 +26,12 @@
     }
 
     # Delete roots older than 30 days
-    for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
-        delete_subvolume_recursively "$i"
+    for i in $(ls /btrfs_tmp/old_roots/); do
+        timestamp=$(echo "$i" | cut -d_ -f1)
+        age=$(( ( $(date +%s) - $(date -d "$timestamp" +%s) ) / 86400 ))
+        if [[ $age -gt 30 ]]; then
+            delete_subvolume_recursively "/btrfs_tmp/old_roots/$i"
+        fi
     done
 
     # Create the new, clean 'root' subvolume for this boot
