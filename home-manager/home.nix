@@ -151,6 +151,8 @@ in {
     neovim
     snapper-gui
     kew
+    floorp-bin
+    librewolf
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [

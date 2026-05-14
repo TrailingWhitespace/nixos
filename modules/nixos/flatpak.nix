@@ -74,6 +74,11 @@
     "com.polydez.KeyVault"
     "me.proton.Pass"
     "page.codeberg.M23Snezhok.Vinyl"
+    "net.waterfox.waterfox"
+    "io.github.tobagin.karere"
+    "net.fhannenheim.musicfetch"
+    "org.garudalinux.firedragon"
+    "com.flow_browser.flow"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides
