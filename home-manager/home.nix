@@ -150,6 +150,7 @@ in {
     bluez-tools
     neovim
     snapper-gui
+    kew
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
