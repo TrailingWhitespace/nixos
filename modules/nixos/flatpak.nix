@@ -29,7 +29,7 @@
     # "com.usebottles.bottles"
     "net.nokyan.Resources"
     "com.protonvpn.www"
-    "io.github.kolunmi.Bazaar"
+    # "io.github.kolunmi.Bazaar"
     "io.github.flattool.Warehouse"
     "io.github.aandrew_me.ytdn"
     "org.gnome.baobab"
@@ -79,6 +79,7 @@
     "net.fhannenheim.musicfetch"
     "org.garudalinux.firedragon"
     "com.flow_browser.flow"
+    "dev.geopjr.Turntable"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides

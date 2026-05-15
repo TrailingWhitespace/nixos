@@ -386,6 +386,32 @@
   #   # openFirewall = true;  # if you need firewall rules opened
   # };
 
+  programs.steam = {
+    enable = true; # Master switch, already covered in installation
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports for Source Dedicated Server hosting
+    # Other general flags if available can be set here.
+  };
+  # Tip: For improved gaming performance, you can also enable GameMode:
+  programs.gamemode.enable = true;
+
+  systemd.services.btrfs-home-snapshot = {
+    description = "Btrfs snapshot of /home";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/home/prabhas/snapshot_home.sh";
+    };
+  };
+
+  systemd.timers.btrfs-home-snapshot = {
+    description = "Run btrfs home snapshot daily";
+    wantedBy = ["timers.target"];
+    timerConfig = {
+      OnCalendar = "daily";
+      Persistent = true;
+    };
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
 }
