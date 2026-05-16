@@ -153,6 +153,7 @@ in {
     kew
     floorp-bin
     librewolf
+    # turntable
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [

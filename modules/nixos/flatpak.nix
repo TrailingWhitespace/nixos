@@ -79,7 +79,7 @@
     "net.fhannenheim.musicfetch"
     "org.garudalinux.firedragon"
     "com.flow_browser.flow"
-    "dev.geopjr.Turntable"
+    # "dev.geopjr.Turntable"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides

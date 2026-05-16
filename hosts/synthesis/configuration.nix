@@ -412,6 +412,30 @@
     };
   };
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      xorg.libX11
+      xorg.libXcursor
+      xorg.libXrandr
+      xorg.libXi
+      xorg.libXext
+      xorg.libXfixes
+      libGL
+      vulkan-loader
+      alsa-lib
+      libpulseaudio
+      udev
+      xorg.libXinerama
+      xorg.libXrender
+      xorg.libxcb
+      xorg.libXau
+      xorg.libXdmcp
+      libglvnd
+      mesa
+    ];
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
 }
