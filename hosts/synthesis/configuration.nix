@@ -206,14 +206,26 @@
     };
   };
 
+  # hardware.graphics = {
+  #   # hardware.opengl
+  #   enable = true;
+  #  driSupport = true;
+  # driSupport32Bit = true;  # needed for 32-bit games like GTA SA
+  #   extraPackages  = with pkgs; [
+  #     pkgs.intel-media-driver
+  #     pkgs.libva
+  #     pkgs.libva-utils
+  #       intel-media-driver
+  #   vaapiIntel
+  #   mesa
+  #   ];
+  # };
   hardware.graphics = {
-    # hardware.opengl
     enable = true;
-
-    extraPackages = [
-      pkgs.intel-media-driver
-      pkgs.libva
-      pkgs.libva-utils
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      mesa
     ];
   };
 

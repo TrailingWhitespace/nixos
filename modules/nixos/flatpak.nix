@@ -80,6 +80,7 @@
     "org.garudalinux.firedragon"
     "com.flow_browser.flow"
     # "dev.geopjr.Turntable"
+    # "net.lutris.Lutris"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides

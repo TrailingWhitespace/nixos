@@ -53,6 +53,7 @@ in {
       # Disable if you don't want unfree packages
       allowUnfree = true;
       allowInsecure = true;
+      permittedInsecurePackages = [];
     };
   };
 
@@ -77,6 +78,7 @@ in {
     microfetch
     nitch
     nerdfetch
+    vulkan-tools
     hyprmon
     xfce.thunar
     kdePackages.dolphin
@@ -154,6 +156,21 @@ in {
     floorp-bin
     librewolf
     # turntable
+
+    protonup-qt # manage ProtonGE versions
+    # heroic           # GOG + Epic launcher
+    lutris # game manager + install scripts
+    bottles # Wine GUI for standalone games
+    # wine             # Wine itself
+    winetricks # install Windows dependencies
+    p7zip # extract
+    gamemode # performance boost while gaming
+    mangohud # in-game FPS/GPU overlay
+    #  wine64
+    wineWowPackages.stable
+    kdePackages.kdenlive
+    #openshot-qt
+    shotcut
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
