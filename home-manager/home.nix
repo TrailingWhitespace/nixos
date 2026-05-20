@@ -167,10 +167,14 @@ in {
     gamemode # performance boost while gaming
     mangohud # in-game FPS/GPU overlay
     #  wine64
+
     wineWowPackages.stable
     kdePackages.kdenlive
     #openshot-qt
     shotcut
+    jdk21
+    openjfx21
+    steam-run
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [

@@ -81,6 +81,8 @@
     "com.flow_browser.flow"
     # "dev.geopjr.Turntable"
     # "net.lutris.Lutris"
+    "io.github.jeffshee.Hidamari"
+    "ch.tlaun.TL"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides
