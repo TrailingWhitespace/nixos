@@ -175,7 +175,10 @@ in {
     jdk21
     openjfx21
     steam-run
+    android-tools
+    scrcpy
   ];
+
 
   # nixpkgs.config.permittedInsecurePackages = [
   #   "qtwebengine-5.15.19" # stremio
