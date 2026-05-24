@@ -4,11 +4,6 @@ source = autostart.conf
 source = decorations.conf
 
 
-xwayland {
-  enabled = true
-  use_nearest_neighbor = false
-}
-
 # Dwindle layout settings
 dwindle {
     pseudotile = true
@@ -124,5 +119,3 @@ source = ./dms/cursor.conf
 
 # emoji picker using rofimoji and tofi
 bind = SUPER, period, exec, rofimoji --selector tofi
-
-
