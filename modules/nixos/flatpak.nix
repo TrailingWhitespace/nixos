@@ -83,6 +83,12 @@
     # "net.lutris.Lutris"
     "io.github.jeffshee.Hidamari"
     "ch.tlaun.TL"
+    "org.vinegarhq.Sober"
+    "io.missioncenter.MissionCenter"
+    "com.opera.opera-gx"
+    "org.gnome.Calculator"
+    "io.github.seadve.Kooha"
+    "com.sublimehq.SublimeText"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides

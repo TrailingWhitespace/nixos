@@ -177,6 +177,8 @@ in {
     steam-run
     android-tools
     scrcpy
+    telegram-desktop
+    
   ];
 
 
