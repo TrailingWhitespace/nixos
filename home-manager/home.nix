@@ -6,7 +6,8 @@
   pkgs,
   ...
 }: let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+  # spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in {
   # You can import other home-manager modules here
   imports = [
@@ -202,7 +203,8 @@ in {
   programs.dank-material-shell = {
     enable = true;
     enableSystemMonitoring = true;
-    dgop.package = inputs.dgop.packages.${pkgs.system}.default;
+    # dgop.package = inputs.dgop.packages.${pkgs.system}.default;
+    dgop.package = inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 
   programs.zsh.dotDir = "${config.xdg.configHome}/zsh";
