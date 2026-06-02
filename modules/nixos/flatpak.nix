@@ -89,6 +89,14 @@
     "org.gnome.Calculator"
     "io.github.seadve.Kooha"
     "com.sublimehq.SublimeText"
+    "io.github.anil_e.Codd"
+    "com.jeffser.Nocturne"
+    "io.github.htkhiem.Euphonica"
+    "dev.zed.Zed"
+    "in.bharatkalluri.splash"
+    "io.github.vikdevelop.SaveDesktop"
+    "com.ktechpit.wonderwall"
+    "io.httpie.Httpie"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides
