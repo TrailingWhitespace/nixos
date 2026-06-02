@@ -179,9 +179,8 @@ in {
     android-tools
     scrcpy
     telegram-desktop
-    
+    mpc
   ];
-
 
   # nixpkgs.config.permittedInsecurePackages = [
   #   "qtwebengine-5.15.19" # stremio
@@ -234,6 +233,11 @@ in {
     #  Listen on all interfaces (0.0.0.0) so it's reachable via Tailscale's IP.
     settings.address = "0.0.0.0";
     settings.port = 5900;
+  };
+
+  services.mpd = {
+    enable = true;
+    musicDirectory = "~/Music";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

@@ -449,11 +449,10 @@
   };
 
   services.power-profiles-daemon.enable = false;
-services.xserver.enable = true;
-#services.xserver.desktopManager.gnome.enable = true;
-services.desktopManager.gnome.enable = true;
-services.displayManager.defaultSession = "hyprland";
-
+  services.xserver.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.defaultSession = "hyprland";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
