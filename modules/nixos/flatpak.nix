@@ -97,6 +97,7 @@
     "io.github.vikdevelop.SaveDesktop"
     "com.ktechpit.wonderwall"
     "io.httpie.Httpie"
+    "eu.cichy1173.tabela"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides
