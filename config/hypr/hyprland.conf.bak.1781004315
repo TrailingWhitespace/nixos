@@ -126,9 +126,3 @@ source = ./dms/cursor.conf
 bind = SUPER, period, exec, rofimoji --selector tofi
 
 
-# bind = $mainMod SHIFT, B, pin
-
-
-# same bind means both get executed
-# bind = $mainMod SHIFT, B, togglefloating
-bind = $mainMod SHIFT, B, pin

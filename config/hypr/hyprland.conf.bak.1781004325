@@ -118,7 +118,7 @@ bind = $mainMod, F2, exec, hyprmon --profile LAPTOP_ONLY
 bind = $mainMod, F3, exec, hyprmon --profile HDMI_ONLY
 bind = $mainMod, F4 , exec, hyprmon --profile SAMSUNG_S3
 
-monitor=eDP-1,disable
+monitor=eDP-1,1920x1080@60.00,0x0,1.00
 monitor=HDMI-A-1,1680x1050@59.97,1920x0,1.00
 source = ./dms/cursor.conf
 
@@ -126,9 +126,3 @@ source = ./dms/cursor.conf
 bind = SUPER, period, exec, rofimoji --selector tofi
 
 
-# bind = $mainMod SHIFT, B, pin
-
-
-# same bind means both get executed
-# bind = $mainMod SHIFT, B, togglefloating
-bind = $mainMod SHIFT, B, pin

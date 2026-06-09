@@ -181,6 +181,7 @@ in {
     telegram-desktop
     mpc
     kdePackages.qtmultimedia
+    glava
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
