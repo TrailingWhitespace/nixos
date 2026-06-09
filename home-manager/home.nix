@@ -180,6 +180,7 @@ in {
     scrcpy
     telegram-desktop
     mpc
+    kdePackages.qtmultimedia
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
