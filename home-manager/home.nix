@@ -28,7 +28,8 @@ in {
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    inputs.dankMaterialShell.homeModules.dank-material-shell
+
+    # inputs.dankMaterialShell.homeModules.dank-material-shell
   ];
 
   nixpkgs = {
@@ -197,16 +198,15 @@ in {
   };
   gtk.gtk4.theme = null;
 
-  # xdg.userDirs.setSessionVariables = false;
 
   programs.home-manager.enable = true;
 
-  programs.dank-material-shell = {
-    enable = true;
-    enableSystemMonitoring = true;
-    # dgop.package = inputs.dgop.packages.${pkgs.system}.default;
-    dgop.package = inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  };
+  # programs.dank-material-shell = {
+  #   enable = true;
+  #   enableSystemMonitoring = true;
+  #   # dgop.package = inputs.dgop.packages.${pkgs.system}.default;
+  #   dgop.package = inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  # };
 
   programs.zsh.dotDir = "${config.xdg.configHome}/zsh";
 
