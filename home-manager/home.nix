@@ -135,6 +135,7 @@ in {
     fuzzel
     rofimoji
     tofi
+    vicinae
     xdotool
     wtype
     ydotool
