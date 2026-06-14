@@ -81,7 +81,7 @@ in {
     nerdfetch
     vulkan-tools
     hyprmon
-    xfce.thunar
+    thunar
     kdePackages.dolphin
     qbittorrent-enhanced
     yazi
@@ -169,7 +169,7 @@ in {
     mangohud # in-game FPS/GPU overlay
     #  wine64
 
-    wineWowPackages.stable
+    wineWow64Packages.stable
     kdePackages.kdenlive
     #openshot-qt
     shotcut

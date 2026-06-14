@@ -7,8 +7,8 @@
       createDirectories = false;
       extraConfig = {
         DEV = "${config.home.homeDirectory}/Dev";
-        SCREENSHOTS = "${config.home.homeDirectory}/Screenshots";
-        WALLPAPERS = "${config.home.homeDirectory}/Wallpapers";
+        SCREENSHOTS = "${config.home.homeDirectory}/Pictures/Screenshots";
+        WALLPAPERS = "${config.home.homeDirectory}/Pictures/Wallpapers";
       };
     };
     mimeApps = let
@@ -60,4 +60,6 @@
       defaultApplications = associations;
     };
   };
+
+  xdg.userDirs.setSessionVariables = true;
 }

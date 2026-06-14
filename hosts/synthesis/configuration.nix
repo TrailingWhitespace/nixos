@@ -427,22 +427,22 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
-      xorg.libX11
-      xorg.libXcursor
-      xorg.libXrandr
-      xorg.libXi
-      xorg.libXext
-      xorg.libXfixes
+      libX11
+      libXcursor
+      libXrandr
+      libXi
+      libXext
+      libXfixes
       libGL
       vulkan-loader
       alsa-lib
       libpulseaudio
       udev
-      xorg.libXinerama
-      xorg.libXrender
-      xorg.libxcb
-      xorg.libXau
-      xorg.libXdmcp
+      libXinerama
+      libXrender
+      libxcb
+      libXau
+      libXdmcp
       libglvnd
       mesa
     ];
