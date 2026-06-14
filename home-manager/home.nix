@@ -183,6 +183,9 @@ in {
     mpc
     kdePackages.qtmultimedia
     glava
+   (inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
+  pkgs.qt6.qt5compat
+])
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
