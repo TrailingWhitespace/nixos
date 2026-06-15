@@ -204,6 +204,10 @@ in {
   libdrm                             # libdrm
   mesa                               # mesa
 ])
+  pavucontrol
+  hyprpwcenter
+  crosspipe
+  pwvucontrol
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
