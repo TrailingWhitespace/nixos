@@ -7,9 +7,9 @@
 
   boot.initrd.systemd.services.rollback = {
     description = "Rollback BTRFS root subvolume";
-    wantedBy = [ "initrd.target" ];
-    after = [ "local-fs-pre.target" ];
-    before = [ "sysroot.mount" ];
+    wantedBy = ["initrd.target"];
+    after = ["local-fs-pre.target"];
+    before = ["sysroot.mount"];
     unitConfig.DefaultDependencies = "no";
     serviceConfig.Type = "oneshot";
     script = ''
