@@ -103,7 +103,7 @@ in {
     # protonvpn-gui
     obsidian
     gitkraken
-    # stremio
+    stremio-linux-shell
     kdePackages.filelight
     jdk
     proton-authenticator
