@@ -79,7 +79,7 @@
     "net.fhannenheim.musicfetch"
     "org.garudalinux.firedragon"
     "com.flow_browser.flow"
-    # "dev.geopjr.Turntable"
+    "dev.geopjr.Turntable"
     # "net.lutris.Lutris"
     "io.github.jeffshee.Hidamari"
     "ch.tlaun.TL"
@@ -98,6 +98,8 @@
     "com.ktechpit.wonderwall"
     "io.httpie.Httpie"
     "eu.cichy1173.tabela"
+    "dev.dergs.Tonearm"
+    "io.github.lullabyX.sone"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides

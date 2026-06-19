@@ -263,18 +263,29 @@ in {
     settings.port = 5900;
   };
 
-  services.mpd = {
-    enable = false;
-    musicDirectory = "~/Music";
-  };
-
-  # systemd.user.services.mpd = {
-  #   Unit.Description = "Music Player Daemon";
-  #   Service = {
-  #     ExecStart = "${pkgs.mpd}/bin/mpd --no-daemon ${config.xdg.configHome}/mpd/mpd.conf";
-  #   };
-  #   Install = { };
+  # services.mpd = {
+  #   enable = false;
+  #   musicDirectory = "~/Music";
   # };
+
+  # # systemd.user.services.mpd = {
+  # #   Unit.Description = "Music Player Daemon";
+  # #   Service = {
+  # #     ExecStart = "${pkgs.mpd}/bin/mpd --no-daemon ${config.xdg.configHome}/mpd/mpd.conf";
+  # #   };
+  # #   Install = { };
+  # # };
+
+  services.mpd = {
+  enable = true;
+  musicDirectory = "/home/prabhas/Music"; # wherever your local files live
+  extraConfig = ''
+    audio_output {
+      type "pipewire"
+      name "PipeWire Output"
+    }
+  '';
+};
 
   programs.noctalia = {
     enable = true;
