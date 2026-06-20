@@ -103,7 +103,7 @@ in {
     # protonvpn-gui
     obsidian
     gitkraken
-    stremio-linux-shell
+    # stremio-linux-shell
     kdePackages.filelight
     jdk
     proton-authenticator
@@ -210,6 +210,8 @@ in {
     hyprpwcenter
     crosspipe
     pwvucontrol
+    htop
+    btop
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
