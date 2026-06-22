@@ -31,7 +31,7 @@ in {
 
     # inputs.dankMaterialShell.homeModules.dank-material-shell
 
-    inputs.noctalia.homeModules.default
+    inputs.caelestia-shell.homeManagerModules.default
   ];
 
   nixpkgs = {
@@ -279,31 +279,35 @@ in {
   # # };
 
   services.mpd = {
-  enable = true;
-  musicDirectory = "/home/prabhas/Music"; # wherever your local files live
-  extraConfig = ''
-    audio_output {
-      type "pipewire"
-      name "PipeWire Output"
-    }
-  '';
-};
-
-  programs.noctalia = {
     enable = true;
+    musicDirectory = "/home/prabhas/Music"; # wherever your local files live
+    extraConfig = ''
+      audio_output {
+        type "pipewire"
+        name "PipeWire Output"
+      }
+    '';
+  };
 
-    # settings = { # This may also be a string or path to a .toml file.
-    #   theme = {
-    #     mode = "dark";
-    #     source = "builtin";
-    #     builtin = "Catppuccin";
-    #   };
-
-    #   wallpaper = {
-    #     enabled = true;
-    #     default.path = "/path/to/wallpapers/wallpaper.png";
-    #   };
-    # };
+  programs.caelestia = {
+    enable = true;
+    systemd = {
+      enable = false; # if you prefer starting from your compositor
+      target = "graphical-session.target";
+      environment = [];
+    };
+    settings = {
+      bar.status = {
+        showBattery = true;
+      };
+      paths.wallpaperDir = "~/Pictures/Wallpapers";
+    };
+    cli = {
+      enable = true; # Also add caelestia-cli to path
+      settings = {
+        theme.enableGtk = false;
+      };
+    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

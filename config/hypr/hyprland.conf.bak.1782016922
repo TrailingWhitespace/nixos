@@ -96,7 +96,7 @@ bind = $mainMod, F4 , exec, hyprmon --profile SAMSUNG_S3
 
 # monitor=eDP-1,disable
 # monitor=HDMI-A-1,1680x1050@59.97,1920x0,1.00
-monitor=eDP-1,disable
+monitor=eDP-1,1920x1080@60.00,0x0,1.00
 monitor=HDMI-A-1,1680x1050@59.97,1920x0,1.00
 
 # emoji picker using rofimoji and tofi
@@ -110,3 +110,17 @@ bind = SUPER, period, exec, rofimoji --selector tofi
 # bind = $mainMod SHIFT, B, togglefloating
 bind = $mainMod SHIFT, B, pin
 
+
+# Noctalia v5
+
+bind = $mainMod, X, exec, noctalia msg panel-toggle session
+bind = $mainMod, W, exec, noctalia msg panel-toggle wallpaper
+bind = $mainMod, L, exec, noctalia msg panel-toggle launcher 
+bind = $mainMod, C, exec, noctalia msg panel-toggle clipboard
+bind = $mainMod, N, exec, noctalia msg notification-dnd-toggle
+bind = $mainMod, TAB, exec, noctalia msg window-switcher
+bind = ALT, TAB, exec, noctalia msg window-switcher close
+bind = $mainMod, Up, exec, noctalia msg volume-up
+bind = $mainMod, Down, exec, noctalia msg volume-down
+bind = $mainMod, V, exec, noctalia msg volume-mute
+bind = $mainMod, B, exec, noctalia msg bar-toggle

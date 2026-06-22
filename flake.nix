@@ -38,11 +38,6 @@
       url = "github:quickshell-mirror/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
@@ -54,6 +49,11 @@
     stylix.url = "github:nix-community/stylix/release-26.05";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
