@@ -1,4 +1,8 @@
-{config, pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   xdg = {
     enable = true;
     cacheHome = config.home.homeDirectory + "/.local/cache";
@@ -63,9 +67,9 @@
 
   xdg.userDirs.setSessionVariables = true;
   xdg.portal = {
-  enable = true;
-  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  # Optional: standard fallback configuration for newer NixOS versions
-  config.common.default = "*"; 
-};
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    # Optional: standard fallback configuration for newer NixOS versions
+    config.common.default = "*";
+  };
 }
