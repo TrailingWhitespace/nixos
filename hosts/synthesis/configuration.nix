@@ -245,7 +245,7 @@
   services.upower.enable = true;
   services.thermald.enable = true;
   services.tlp = {
-    enable = true;
+    enable = false;
 
     settings = {
       # CPU governors
@@ -448,7 +448,7 @@
     ];
   };
 
-  services.power-profiles-daemon.enable = false;
+  services.power-profiles-daemon.enable = true;
   services.xserver.enable = true;
   #services.xserver.desktopManager.gnome.enable = true;
   services.desktopManager.gnome.enable = true;

@@ -186,26 +186,26 @@ in {
     mpc
     kdePackages.qtmultimedia
     glava
-    (inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
-      qt6.qt5compat
-      qt6.qtpositioning
-      kdePackages.syntax-highlighting # syntax-highlighting
-      kdePackages.kirigami # kirigami
-      kdePackages.kdialog # kdialog
-      qt6.qtbase # qt6-base
-      qt6.qtdeclarative # qt6-declarative
-      qt6.qt5compat # qt6-5compat
-      qt6.qtimageformats # qt6-imageformats
-      qt6.qtmultimedia # qt6-multimedia
-      qt6.qtpositioning # qt6-positioning
-      qt6.qtsvg # qt6-svg
-      qt6.qttools # qt6-tools
-      qt6.qtvirtualkeyboard # qt6-virtualkeyboard
-      qt6.qtwayland # qt6-wayland
-      qt6.qtquicktimeline # qt6-quicktimeline
-      libdrm # libdrm
-      mesa # mesa
-    ])
+    # (inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
+    #   qt6.qt5compat
+    #   qt6.qtpositioning
+    #   kdePackages.syntax-highlighting # syntax-highlighting
+    #   kdePackages.kirigami # kirigami
+    #   kdePackages.kdialog # kdialog
+    #   qt6.qtbase # qt6-base
+    #   qt6.qtdeclarative # qt6-declarative
+    #   qt6.qt5compat # qt6-5compat
+    #   qt6.qtimageformats # qt6-imageformats
+    #   qt6.qtmultimedia # qt6-multimedia
+    #   qt6.qtpositioning # qt6-positioning
+    #   qt6.qtsvg # qt6-svg
+    #   qt6.qttools # qt6-tools
+    #   qt6.qtvirtualkeyboard # qt6-virtualkeyboard
+    #   qt6.qtwayland # qt6-wayland
+    #   qt6.qtquicktimeline # qt6-quicktimeline
+    #   libdrm # libdrm
+    #   mesa # mesa
+    # ])
     pavucontrol
     hyprpwcenter
     crosspipe
@@ -303,7 +303,7 @@ in {
       paths.wallpaperDir = "~/Pictures/Wallpapers";
     };
     cli = {
-      enable = true; # Also add caelestia-cli to path
+      enable = false; # Also add caelestia-cli to path
       settings = {
         theme.enableGtk = false;
       };
