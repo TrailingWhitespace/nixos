@@ -303,7 +303,7 @@ in {
       paths.wallpaperDir = "~/Pictures/Wallpapers";
     };
     cli = {
-      enable = false; # Also add caelestia-cli to path
+      enable = true; # Also add caelestia-cli to path
       settings = {
         theme.enableGtk = false;
       };
