@@ -26,7 +26,7 @@
     "com.stremio.Stremio"
     "app.zen_browser.zen"
     "io.github.nozwock.Packet"
-    # "com.usebottles.bottles"
+     "com.usebottles.bottles"
     "net.nokyan.Resources"
     "com.protonvpn.www"
     # "io.github.kolunmi.Bazaar"
@@ -100,6 +100,9 @@
     "eu.cichy1173.tabela"
     "dev.dergs.Tonearm"
     "io.github.lullabyX.sone"
+    "org.freedownloadmanager.Manager"
+    "org.jdownloader.JDownloader"
+    "net.agalwood.Motrix"
   ];
 
   # Also look at: https://github.com/gmodena/nix-flatpak#overrides

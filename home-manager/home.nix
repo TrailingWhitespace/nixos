@@ -165,7 +165,7 @@ in {
     protonup-qt # manage ProtonGE versions
     # heroic           # GOG + Epic launcher
     lutris # game manager + install scripts
-    bottles # Wine GUI for standalone games
+    #bottles # Wine GUI for standalone games
     # wine             # Wine itself
     winetricks # install Windows dependencies
     p7zip # extract
