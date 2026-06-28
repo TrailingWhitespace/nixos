@@ -212,6 +212,7 @@ in {
     pwvucontrol
     htop
     btop
+    gamescope
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
