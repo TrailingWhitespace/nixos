@@ -292,26 +292,60 @@ in {
     '';
   };
 
-  programs.caelestia = {
-    enable = true;
-    systemd = {
-      enable = false; # if you prefer starting from your compositor
-      target = "graphical-session.target";
-      environment = [];
-    };
-    settings = {
-      bar.status = {
+programs.caelestia = {
+  enable = true;
+  systemd = {
+    enable = false;
+    target = "graphical-session.target";
+    environment = [];
+  };
+  settings = {
+    appearance.transparency.enabled = true;
+    bar = {
+      activeWindow = {
+        compact = false;
+        inverted = true;
+      };
+      clock = {
+        background = false;
+        showDate = true;
+      };
+      status = {
+        showAudio = true;
         showBattery = true;
+        showKbLayout = false;
+        showMicrophone = false;
       };
-      paths.wallpaperDir = "~/Pictures/Wallpapers";
+      tray = {
+        background = true;
+        compact = false;
+        recolour = false;
+      };
+      workspaces = {
+        activeTrail = false;
+        occupiedBg = false;
+      };
     };
-    cli = {
-      enable = true; # Also add caelestia-cli to path
-      settings = {
-        theme.enableGtk = false;
+    launcher = {
+      showOnHover = false;
+      useFuzzy = {
+        actions = true;
+        apps = true;
+        schemes = true;
+        variants = true;
+        wallpapers = true;
       };
+    };
+    paths.wallpaperDir = "~/Pictures/Wallpapers";
+  };
+  cli = {
+    enable = true;
+    settings = {
+      theme.enableGtk = false;
     };
   };
+};
+  
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.05";
