@@ -29,7 +29,7 @@ in {
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
 
-    # inputs.dankMaterialShell.homeModules.dank-material-shell
+    inputs.dankMaterialShell.homeModules.dank-material-shell
   ];
 
   nixpkgs = {
@@ -184,26 +184,26 @@ in {
     mpc
     kdePackages.qtmultimedia
     glava
-    (inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
-      qt6.qt5compat
-      qt6.qtpositioning
-      kdePackages.syntax-highlighting # syntax-highlighting
-      kdePackages.kirigami # kirigami
-      kdePackages.kdialog # kdialog
-      qt6.qtbase # qt6-base
-      qt6.qtdeclarative # qt6-declarative
-      qt6.qt5compat # qt6-5compat
-      qt6.qtimageformats # qt6-imageformats
-      qt6.qtmultimedia # qt6-multimedia
-      qt6.qtpositioning # qt6-positioning
-      qt6.qtsvg # qt6-svg
-      qt6.qttools # qt6-tools
-      qt6.qtvirtualkeyboard # qt6-virtualkeyboard
-      qt6.qtwayland # qt6-wayland
-      qt6.qtquicktimeline # qt6-quicktimeline
-      libdrm # libdrm
-      mesa # mesa
-    ])
+    # (inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
+    #   qt6.qt5compat
+    #   qt6.qtpositioning
+    #   kdePackages.syntax-highlighting # syntax-highlighting
+    #   kdePackages.kirigami # kirigami
+    #   kdePackages.kdialog # kdialog
+    #   qt6.qtbase # qt6-base
+    #   qt6.qtdeclarative # qt6-declarative
+    #   qt6.qt5compat # qt6-5compat
+    #   qt6.qtimageformats # qt6-imageformats
+    #   qt6.qtmultimedia # qt6-multimedia
+    #   qt6.qtpositioning # qt6-positioning
+    #   qt6.qtsvg # qt6-svg
+    #   qt6.qttools # qt6-tools
+    #   qt6.qtvirtualkeyboard # qt6-virtualkeyboard
+    #   qt6.qtwayland # qt6-wayland
+    #   qt6.qtquicktimeline # qt6-quicktimeline
+    #   libdrm # libdrm
+    #   mesa # mesa
+    # ])
     pavucontrol
     hyprpwcenter
     crosspipe
@@ -232,12 +232,12 @@ in {
 
   programs.home-manager.enable = true;
 
-  # programs.dank-material-shell = {
-  #   enable = true;
-  #   enableSystemMonitoring = true;
-  #   # dgop.package = inputs.dgop.packages.${pkgs.system}.default;
-  #   dgop.package = inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  # };
+  programs.dank-material-shell = {
+    enable = true;
+    enableSystemMonitoring = true;
+    # dgop.package = inputs.dgop.packages.${pkgs.system}.default;
+    dgop.package = inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  };
 
   programs.zsh.dotDir = "${config.xdg.configHome}/zsh";
 

@@ -22,17 +22,17 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
-    # dankMaterialShell = {
-    #   url = "github:AvengeMedia/DankMaterialShell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   # inputs.dgop.follows = "dgop";
-    #   # inputs.dms-cli.follows = "dms-cli";
-    # };
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.dgop.follows = "dgop";
+      # inputs.dms-cli.follows = "dms-cli";
+    };
 
-    # dgop = {
-    #   url = "github:AvengeMedia/dgop";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     quickshell = {
       url = "github:quickshell-mirror/quickshell";
