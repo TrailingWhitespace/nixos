@@ -215,6 +215,7 @@ in {
     gamescope
     inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
     appimage-run 
+    zed-editor-fhs
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [

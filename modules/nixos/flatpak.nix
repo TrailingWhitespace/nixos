@@ -92,7 +92,7 @@
     "io.github.anil_e.Codd"
     "com.jeffser.Nocturne"
     "io.github.htkhiem.Euphonica"
-    "dev.zed.Zed"
+    # "dev.zed.Zed"
     "in.bharatkalluri.splash"
     "io.github.vikdevelop.SaveDesktop"
     "com.ktechpit.wonderwall"
