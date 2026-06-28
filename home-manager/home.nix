@@ -30,8 +30,6 @@ in {
     # ./nvim.nix
 
     # inputs.dankMaterialShell.homeModules.dank-material-shell
-
-    inputs.caelestia-shell.homeManagerModules.default
   ];
 
   nixpkgs = {
@@ -186,26 +184,26 @@ in {
     mpc
     kdePackages.qtmultimedia
     glava
-    # (inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
-    #   qt6.qt5compat
-    #   qt6.qtpositioning
-    #   kdePackages.syntax-highlighting # syntax-highlighting
-    #   kdePackages.kirigami # kirigami
-    #   kdePackages.kdialog # kdialog
-    #   qt6.qtbase # qt6-base
-    #   qt6.qtdeclarative # qt6-declarative
-    #   qt6.qt5compat # qt6-5compat
-    #   qt6.qtimageformats # qt6-imageformats
-    #   qt6.qtmultimedia # qt6-multimedia
-    #   qt6.qtpositioning # qt6-positioning
-    #   qt6.qtsvg # qt6-svg
-    #   qt6.qttools # qt6-tools
-    #   qt6.qtvirtualkeyboard # qt6-virtualkeyboard
-    #   qt6.qtwayland # qt6-wayland
-    #   qt6.qtquicktimeline # qt6-quicktimeline
-    #   libdrm # libdrm
-    #   mesa # mesa
-    # ])
+    (inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
+      qt6.qt5compat
+      qt6.qtpositioning
+      kdePackages.syntax-highlighting # syntax-highlighting
+      kdePackages.kirigami # kirigami
+      kdePackages.kdialog # kdialog
+      qt6.qtbase # qt6-base
+      qt6.qtdeclarative # qt6-declarative
+      qt6.qt5compat # qt6-5compat
+      qt6.qtimageformats # qt6-imageformats
+      qt6.qtmultimedia # qt6-multimedia
+      qt6.qtpositioning # qt6-positioning
+      qt6.qtsvg # qt6-svg
+      qt6.qttools # qt6-tools
+      qt6.qtvirtualkeyboard # qt6-virtualkeyboard
+      qt6.qtwayland # qt6-wayland
+      qt6.qtquicktimeline # qt6-quicktimeline
+      libdrm # libdrm
+      mesa # mesa
+    ])
     pavucontrol
     hyprpwcenter
     crosspipe
@@ -216,6 +214,7 @@ in {
     inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
     appimage-run 
     zed-editor-fhs
+    material-symbols
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
@@ -293,60 +292,6 @@ in {
     '';
   };
 
-programs.caelestia = {
-  enable = true;
-  systemd = {
-    enable = false;
-    target = "graphical-session.target";
-    environment = [];
-  };
-  settings = {
-    appearance.transparency.enabled = true;
-    bar = {
-      activeWindow = {
-        compact = false;
-        inverted = true;
-      };
-      clock = {
-        background = false;
-        showDate = true;
-      };
-      status = {
-        showAudio = true;
-        showBattery = true;
-        showKbLayout = false;
-        showMicrophone = false;
-      };
-      tray = {
-        background = true;
-        compact = false;
-        recolour = false;
-      };
-      workspaces = {
-        activeTrail = false;
-        occupiedBg = false;
-      };
-    };
-    launcher = {
-      showOnHover = false;
-      useFuzzy = {
-        actions = true;
-        apps = true;
-        schemes = true;
-        variants = true;
-        wallpapers = true;
-      };
-    };
-    paths.wallpaperDir = "~/Pictures/Wallpapers";
-  };
-  cli = {
-    enable = true;
-    settings = {
-      theme.enableGtk = false;
-    };
-  };
-};
-  
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.05";

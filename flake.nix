@@ -34,10 +34,10 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    # quickshell = {
-    #   url = "github:quickshell-mirror/quickshell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
@@ -49,11 +49,6 @@
     stylix.url = "github:nix-community/stylix/release-26.05";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     freesmlauncher = {
       url = "github:FreesmTeam/FreesmLauncher";
