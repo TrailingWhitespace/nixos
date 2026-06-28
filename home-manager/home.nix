@@ -213,6 +213,8 @@ in {
     htop
     btop
     gamescope
+    inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
+    appimage-run 
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
