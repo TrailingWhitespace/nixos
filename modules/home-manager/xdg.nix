@@ -66,10 +66,10 @@
   };
 
   xdg.userDirs.setSessionVariables = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-    # Optional: standard fallback configuration for newer NixOS versions
-    config.common.default = "*";
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  #   # Optional: standard fallback configuration for newer NixOS versions
+  #   config.common.default = "*";
+  # };
 }
