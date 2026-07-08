@@ -72,4 +72,6 @@
   #   # Optional: standard fallback configuration for newer NixOS versions
   #   config.common.default = "*";
   # };
+
+  # xdg.configFile."mimeapps.list".force = true;
 }

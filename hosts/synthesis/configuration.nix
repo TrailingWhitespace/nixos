@@ -8,7 +8,7 @@
 }: {
   imports = [
     outputs.nixosModules.impermanence
-    outputs.nixosModules.sddm
+    # outputs.nixosModules.sddm
     outputs.nixosModules.flatpak
 
     # Or modules from other flakes (such as nixos-hardware):
@@ -336,7 +336,7 @@
   services.gnome.gcr-ssh-agent.enable = true;
 
   services.dbus.packages = [pkgs.gnome-keyring pkgs.gcr];
-  #environment.sessionVariables.SSH_AUTH_SOCK = "/run/user/$UID/keyring/ssh";
+  # environment.sessionVariables.SSH_AUTH_SOCK = "/run/user/$UID/keyring/ssh";
   environment.variables.SSH_AUTH_SOCK = "/run/user/$UID/gcr/ssh";
 
   # Looks like i dont need
@@ -452,7 +452,19 @@
   services.xserver.enable = true;
   #services.xserver.desktopManager.gnome.enable = true;
   services.desktopManager.gnome.enable = true;
-  services.displayManager.defaultSession = "hyprland";
+  # services.desktopManager.plasma6.enable = true;
+  # services.displayManager.defaultSession = "hyprland";
+
+  # programs.ssh.askPassword = lib.mkForce "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
+
+
+services.displayManager.sddm.enable = false;
+services.displayManager.gdm.enable = false;
+programs.regreet.enable = false;
+services.greetd = {
+  enable = true;
+  settings.default_session.command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
+};
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";

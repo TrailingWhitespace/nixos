@@ -215,6 +215,7 @@ in {
     appimage-run 
     zed-editor-fhs
     material-symbols
+    flutter
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
