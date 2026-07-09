@@ -33,7 +33,7 @@
     "io.github.flattool.Warehouse"
     "io.github.aandrew_me.ytdn"
     "org.gnome.baobab"
-    "com.jetbrains.IntelliJ-IDEA-Community"
+    # "com.jetbrains.IntelliJ-IDEA-Community"
     "me.proton.Pass"
     "com.github.marhkb.Pods"
     "io.github.ppvan.tarug"

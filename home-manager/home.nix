@@ -216,6 +216,16 @@ in {
     zed-editor-fhs
     material-symbols
     flutter
+    android-studio
+    # jetbrains.pycharm
+    # jetbrains.rust-rover
+    # jetbrains.goland
+    jetbrains.idea
+    # jetbrains.idea-oss
+    # jetbrains.clion
+    # jetbrains.webstorm
+    # jetbrains.rider
+    # jetbrains.ruby-mine
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
