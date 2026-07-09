@@ -98,7 +98,8 @@ in {
     cmatrix
     ffmpeg
     ffmpegthumbnailer
-    # protonvpn-gui
+    # protonvpn-
+    proton-vpn
     obsidian
     gitkraken
     # stremio-linux-shell
@@ -225,7 +226,8 @@ in {
     # jetbrains.clion
     # jetbrains.webstorm
     # jetbrains.rider
-    # jetbrains.ruby-mine
+    # jetbrains.ruby-
+    uwsm
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
