@@ -23,7 +23,7 @@
 
   # Add here the flatpaks you want to install
   services.flatpak.packages = [
-    "com.stremio.Stremio"
+    # "com.stremio.Stremio"
     "app.zen_browser.zen"
     "io.github.nozwock.Packet"
      "com.usebottles.bottles"

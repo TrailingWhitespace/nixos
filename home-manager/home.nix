@@ -102,7 +102,7 @@ in {
     proton-vpn
     obsidian
     gitkraken
-    # stremio-linux-shell
+    stremio-linux-shell
     kdePackages.filelight
     jdk
     proton-authenticator
@@ -224,10 +224,11 @@ in {
     jetbrains.idea
     # jetbrains.idea-oss
     # jetbrains.clion
-    # jetbrains.webstorm
+    jetbrains.webstorm
     # jetbrains.rider
-    # jetbrains.ruby-
+    # jetbrains.ruby-mine
     uwsm
+    podman-compose
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
