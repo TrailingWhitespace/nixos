@@ -322,7 +322,7 @@
   # If you bind WayVNC to 0.0.0.0, you *must* also allow the port (default 5900)
   # on the tailscale0 interface, though setting it to bind to the Tailscale IP is safer.
   # For simplicity, if binding to 0.0.0.0, ensure 5900 is open:
-  networking.firewall.allowedTCPPorts = [5900 8000]; # Only if binding to 0.0.0.0
+  networking.firewall.allowedTCPPorts = [5900 8000 5000 3000 5173]; # Only if binding to 0.0.0.0
 
   users.users.prabhas.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINf93AnJYnnaQHSpLjbFXi9vAQIkkro6eTNm0hXwtbsn prabhas@synthesis"
