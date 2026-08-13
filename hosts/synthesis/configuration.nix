@@ -464,7 +464,7 @@ services.displayManager.gdm.enable = false;
 programs.regreet.enable = false;
 services.greetd = {
   enable = true;
-  settings.default_session.command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
+  settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --time";
 };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

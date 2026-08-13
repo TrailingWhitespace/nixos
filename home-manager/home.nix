@@ -229,6 +229,10 @@ in {
     # jetbrains.ruby-mine
     uwsm
     podman-compose
+    warp-terminal
+    pnpm
+    codex
+    ngrok
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
