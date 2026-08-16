@@ -9,7 +9,15 @@
     zoxide
     fzf # fuzzy finder — powers Ctrl+R history search
     bat # better cat, used by fzf previews
+    direnv
+    nix-direnv
   ];
+
+    programs.direnv = {
+  enable = true;
+  nix-direnv.enable = true;
+};
+
 
   programs.zsh = {
     enable = true;
@@ -72,6 +80,9 @@
       alias grep="grep --color=auto"
       alias vnc="sudo tailscale up && tailscale status && systemctl --user start wayvnc && tailscale ip -4 && journalctl --user -u wayvnc -n 20"
       alias vnc-stop="sudo tailscale down && systemctl --user stop wayvnc"
+
+      # direnv hook (if not automatically added)
+      # eval "$(direnv hook zsh)"  # Usually auto-added by programs.direnv
     '';
   };
 

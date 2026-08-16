@@ -233,6 +233,12 @@ in {
     pnpm
     codex
     ngrok
+    anytype
+    # cargo
+    # rustc
+    # rust-analyzer
+    # pkg-config
+    # openssl
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
@@ -309,6 +315,7 @@ in {
       }
     '';
   };
+
 
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
