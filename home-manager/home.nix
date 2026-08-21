@@ -243,6 +243,12 @@ in {
     # lsof
     # # netstat
     # fuser
+     dbus
+        glib
+        gtk3
+        libsoup_3
+        webkitgtk_4_1
+        librsvg
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
@@ -320,6 +326,9 @@ in {
     '';
   };
 
+home.sessionVariables = {
+  PKG_CONFIG_PATH="${pkgs.dbus.dev}/lib/pkgconfig:$PKG_CONFIG_PATH";
+  };
 
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
