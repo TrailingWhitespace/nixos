@@ -234,11 +234,15 @@ in {
     codex
     ngrok
     anytype
-    # cargo
-    # rustc
+    cargo
+    rustc
     # rust-analyzer
-    # pkg-config
-    # openssl
+    gcc
+    pkg-config
+    openssl
+    # lsof
+    # # netstat
+    # fuser
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
